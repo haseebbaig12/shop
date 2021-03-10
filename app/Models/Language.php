@@ -15,23 +15,23 @@ class Language extends Model
         'user_id',
         'site_id',
     ];
-//    public function language()
-//    {
-//
-//        if($id){
-//       $adminid = \Auth::user()->id;
-//
-//        $site= userSite::where('user',1)->get()->first();
-//
-//        $language = Language::where('user_id',$adminid)->where('site_id',$site->site)->where('status',1)->get();
-//        }else{
-//
-//            $user = User::where('parentID',$id)->get()->first();
-//            // dd($user);
-//            $site= userSite::where('user',$user->id)->get()->first();
-//            // dd
-//            $language = Language::where('user_id',$id)->where('site_id',$site->site)->where('status',1)->get();
-//        }
-//        return $language;
-//    }
+   public function language($id)
+   {
+
+       if($id){
+      $adminid = Auth::user()->id;
+
+       $site= userSite::where('user',1)->get()->first();
+
+       $language = Language::where('user_id',$adminid)->where('site_id',$site->site)->where('status',1)->get();
+       }else{
+
+           $user = User::where('parentID',$id)->get()->first();
+           // dd($user);
+           $site= userSite::where('user',$user->id)->get()->first();
+           // dd
+           $language = Language::where('user_id',$id)->where('site_id',$site->site)->where('status',1)->get();
+       }
+       return $language;
+   }
 }

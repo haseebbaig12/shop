@@ -7,7 +7,7 @@
       <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
           COOUTFITS
         </a></div>
-        
+
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item dropdown ">
