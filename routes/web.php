@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\Language\LanguageChangeController;
 use App\Http\Controllers\Backend\Language\LanguageController;
 use App\Http\Controllers\Backend\Currency\CurrencyController;
 use App\Http\Controllers\Backend\Local\LocaleController;
+use App\Http\Controllers\Frontend\HomeController as frontend;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
