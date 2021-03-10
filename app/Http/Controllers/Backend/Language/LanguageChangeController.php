@@ -71,14 +71,14 @@ class LanguageChangeController extends Controller
      */
     public function update(Request $request)
     {
-        $user = Auth::user()->id;
-        $data= userSite::where('user',$user)->get()->first();
-        if(!empty($data)){
-            $data->update($request->all());
-            return redirect('brand');
-        }else{
-            return abort('404');
-        }
+//        $user = Auth::user()->id;
+//        $data= userSite::where('user',$user)->get()->first();
+//        if(!empty($data)){
+//            $data->update($request->all());
+//            return redirect('brand');
+//        }else{
+//            return abort('404');
+//        }
     }
 
     /**
