@@ -12,7 +12,16 @@ use App\Http\Controllers\Backend\Language\LanguageChangeController;
 use App\Http\Controllers\Backend\Language\LanguageController;
 use App\Http\Controllers\Backend\Currency\CurrencyController;
 use App\Http\Controllers\Backend\Local\LocaleController;
+
+use App\Http\Controllers\Frontend\Home\HomeController as Home;
+use App\Http\Controllers\Frontend\ProductController as Product;
+use App\Http\Controllers\Frontend\SingleProductController;
+use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\LanguageSwitcher;
+
 use App\Http\Controllers\Frontend\HomeController as frontend;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,9 +33,9 @@ use App\Http\Controllers\Frontend\HomeController as frontend;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -54,3 +63,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('demo/{id}', [CategoryController::class,'update']);
 });
 require __DIR__.'/auth.php';
+
+
+Route::resource('/shop', Product::class);
+Route::resource('/single-product', SingleProductController::class);
+Route::resource('/languages', LanguageSwitcher::class);
+Route::resource('/', Home::class);
+Route::resource('/cart', CartController::class);
+Route::resource('/checkout', CheckoutController::class);
