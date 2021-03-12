@@ -17,9 +17,10 @@ class LanguageController extends Controller
      */
     public function index()
     {
-        $user = Auth::user()->id;
-        // $user = userSite::where('user',$user);
-        $languages = Language::where('user_id',$user)->get();
+//        $user = Auth::user()->id;
+//        // $user = userSite::where('user',$user);
+//        $languages = Language::where('user_id',$user)->get();
+        $languages=session()->get('language');
         return view('backend.languages.index', compact('languages'));
     }
 

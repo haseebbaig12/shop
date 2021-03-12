@@ -19,46 +19,57 @@ class SiteCheck
      */
     public function handle(Request $request, Closure $next)
     {
+        if (Auth::check()) {
+            $site_id = '';
+            $R_Site = '';
+            $language=null;
+            $R_Site = $request['site'];
+//            dd($R_Site);
+//            if ($R_Site != Null) {
+//                $R_Site = $R_Site;
+//            }
 
-        $site_id = '';
-        $R_Site='';
-        $R_Site = $request['site'];
-        if($R_Site!=Null){
-            $R_Site=$R_Site;
-        }
-        $user = Auth::user()->id;
+                $user_id = Auth::user()->id;
+                $site_data = userSite::where('user', $user_id)->get()->first();
+                $site_id = $site_data['site'];
 
-        // $user = userSite::where('user',$user);
-        $site_data = userSite::where('user', $user)->get()->first();
-        $site_id = $site_data['site'];
-//        dd($site_id);
-        if ($R_Site != $site_id) {
-            $site=[
-                'site'=>$R_Site
-            ];
-            $site_id = $site_data->update($site);
-        } else {
-            $site_id=$site_id;
-        }
-            $languages = Language::where('site_id', $site_id)->get()->first();
-            if (empty($languages)) {
+                if ($R_Site != $site_id && $R_Site != NUll) {
+                    $site = [
+                        'site' => $R_Site
+                    ];
+                    $site_id = $site_data->update($site);
+                } else {
+                    $site_id = $site_id;
+                }
+                $languages = Language::where('user_id',$user_id)->where('site_id',$site_id)->where('status',1)->get();
 
-                $languages = Null;
-            } elseif (!empty($languages)) {
-                $languages = $languages;
+//                if (empty($languages)) {
+//
+//                    $languages = Null;
+//                } elseif (!empty($languages)) {
+//                    $languages = $languages;
+//                }
+            if($languages != null){
+                $languages=$languages;
             }
-            $a = session(
+                $a = session(
 
-                [
-                    'id' => $user,
-                    'site' => $site_id,
-                    'language' => $languages
-                ]
-            );
-            dd(session()->get($a));
+                    [
+                        'id' => $user_id,
+                        'site' => $site_id,
+                        'language' => $languages
+                    ]
+                );
+//                dd(session()->get($a));
+
+            }
+
+            // $user = userSite::where('user',$user);
 
 
-            return $next($request);
-        }
+
+
+        return $next($request);
+    }
 
 }
