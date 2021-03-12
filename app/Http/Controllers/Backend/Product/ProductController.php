@@ -25,11 +25,11 @@ class ProductController extends Controller
     }
     public function index()
     {
-        $user = Auth::user()->id;
-        // $user = userSite::where('user',$user);
-        $site_id= userSite::where('user',$user)->get()->first();
+//        $user = Auth::user()->id;
+//        // $user = userSite::where('user',$user);
+//        $site_id= userSite::where('user',$user)->get()->first();
 
-        $product = Product::where('user_id',$user)->where('site_id',$site_id->site)->get();
+        $product = Product::where('user_id',session()->get('id'))->where('site_id',session()->get('site'))->get();
         return view('backend/product/index', compact('product'));
     }
 
@@ -40,10 +40,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $id = Auth::user()->parentID;
+//        $id = Auth::user()->parentID;
         // below $language from language Model
-        $language = $this->user->language($id);
-        $site_id= userSite::where('user',$id)->get()->first();
+        $language = session()->get('language');
+
+//        $site_id= userSite::where('user',$id)->get()->first();
         return view('backend/product/add',compact('language'));
     }
 

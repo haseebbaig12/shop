@@ -58,7 +58,7 @@
             </main>
           </div> --}}
         </div>
-        
+
 
       </div>
 
@@ -78,23 +78,24 @@
                     <div class="col-md-12">
                       <ul class="nav nav-tabs" id="myTab" role="tablist">
                         @foreach($language as $languages)
+
                         <li class="nav-item">
-                          <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{$languages->language}}{{$languages->id}}" role="tab" aria-controls="home" aria-selected="true">{{$languages->language}}</a>
+                          <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{$languages['name']}}{{$languages['id']}}" role="tab" aria-controls="home" aria-selected="true">{{$languages['name']}}</a>
                         </li>
                         @endforeach
                       </ul>
                       <div class="tab-content" id="myTabContent">
                         @foreach($language as $languages)
-                        <div class="tab-pane fade" id="{{$languages->language}}{{$languages->id}}" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade" id="{{$languages['name']}}{{$languages['id']}}" role="tabpanel" aria-labelledby="home-tab">
                           <div class="row">
                             <div class="col-md-12">
-                              <p class="my-3" style="font-size:10px;margin:0;">Please Upload Data in {{$languages->language}} </p>
+                              <p class="my-3" style="font-size:10px;margin:0;">Please Upload Data in {{$languages['name']}} </p>
                             </div>
                             <div class="col-md-12">
                                   <div class="form-group">
                                     <label class="bmd-label-floating">TITLE</label>
                                     <input type="text" name="name[]" class="form-control">
-                                    <input type="hidden" name="language[]" value="{{$languages->id}}" class="form-control">
+                                    <input type="hidden" name="language[]" value="{{$languages['id']}}" class="form-control">
                                   </div>
                             </div>
                             <div class="col-md-12">
@@ -128,14 +129,14 @@
                         </div>
                         @endforeach
                       </div>
-              
-                      
-                      
+
+
+
                     </div>
-                    
+
                   </div>
-                  
-                
+
+
                   <div class="clearfix"></div>
               </div>
             </div>
@@ -146,7 +147,7 @@
 <!--
 The classic file input element we'll enhance to a file pond
 -->
-<input type="file" 
+<input type="file"
        class="filepond"
        name="filepond"
        multiple
