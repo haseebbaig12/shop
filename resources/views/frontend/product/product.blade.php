@@ -5,14 +5,13 @@
 @section('content')
 
 <div class="body">
-    
+
     <div role="main" class="main shop pt-4">
 
         <div class="container">
 
             <div class="masonry-loader masonry-loader-showing">
                 <div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
-                   {{-- @dd($product); --}}
                     @foreach ($compproduct as $products)
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="product mb-0">
@@ -49,9 +48,9 @@
                         </div>
                     </div>
                     @endforeach
-                    
-                   
-                   
+
+
+
                 </div>
                 <div class="row mt-4">
                     <div class="col">

@@ -17,7 +17,8 @@ class CreatePostTextsTable extends Migration
             $table->increments('id')->unsigned();
             $table->unsignedInteger('postID');
             $table->string('title')->nullable();
-            $table->string('post_text')->nullable();
+            $table->string('short_desc')->nullable();
+            $table->text('post_text')->nullable();
             $table->unsignedInteger('languageID');
             $table->foreign('postID')->references('id')->on('posts')->onDelete('cascade');
             $table->foreign('languageID')->references('id')->on('languages')->onDelete('cascade');
