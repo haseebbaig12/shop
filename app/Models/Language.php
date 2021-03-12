@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-//use Auth;
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
@@ -20,8 +20,8 @@ class Language extends Model
 
        if($id){
       $adminid = Auth::user()->id;
-
-       $site= userSite::where('user',1)->get()->first();
+// dd($adminid);
+       $site= userSite::where('user', $adminid)->get()->first();
 
        $language = Language::where('user_id',$adminid)->where('site_id',$site->site)->where('status',1)->get();
        }else{
@@ -31,7 +31,8 @@ class Language extends Model
            $site= userSite::where('user',$user->id)->get()->first();
            // dd
            $language = Language::where('user_id',$id)->where('site_id',$site->site)->where('status',1)->get();
-       }
+        //    dd($language);
+        }
        return $language;
    }
 }

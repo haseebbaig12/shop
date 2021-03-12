@@ -3,6 +3,7 @@
   Add Product - Cooutfits
 @endsection
 @section('content')
+
 <form action="{{url ('product')}}" method="POST" enctype="multipart/form-data">
   @csrf
     <div class="row">

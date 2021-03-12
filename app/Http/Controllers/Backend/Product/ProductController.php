@@ -40,9 +40,11 @@ class ProductController extends Controller
      */
     public function create()
     {
+        // $id = Auth::user()->parentID;
         $id = Auth::user()->parentID;
         // below $language from language Model
         $language = $this->user->language($id);
+        // dd($language);
         $site_id= userSite::where('user',$id)->get()->first();
         return view('backend/product/add',compact('language'));
     }

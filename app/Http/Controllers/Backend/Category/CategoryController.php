@@ -39,9 +39,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $id = Auth::user()->parentID;
+        $id = Auth::user()->id;
         // below $language from language Model
         $language = $this->user->language($id);
+        // dd($language);
         return view('backend/category/add',compact('language'));
     }
 
