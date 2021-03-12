@@ -18,19 +18,19 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               @php
               $user = Auth::user()->id;
-              
-              $lang= DB::table('sites')->where('user_id',$user)->get();   
-              $site= DB::table('user_site')->where('user',$user)->get()->first(); 
+
+              $lang= DB::table('sites')->where('user_id',$user)->get();
+              $site= DB::table('user_site')->where('user',$user)->get()->first();
               @endphp
               @foreach ($lang as $language)
-            <form method="POST" action="{{route('lang.update', $site->id)}}">
+            <form method="get" action="{{url('Dashboard')}}">
             @csrf
             @method('PUT')
             <input type="hidden" value="{{$language->id}}" name="site">
             <button class="dropdown-item">{{$language->name}}</button>
             </form>
               @endforeach
-              <form method="POST" action="{{route('lang.update', $site->id)}}">
+              <form method="get" action="{{url('Dashboard')}}">
                 @csrf
                 @method('PUT')
                 <input type="hidden" value="1" name="site">
@@ -49,14 +49,14 @@
               <i class="material-icons">dashboard</i>
               Slider
             </a>
-            
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route ('brand.index')}}" >
               <i class="material-icons">dashboard</i>
               Brands
             </a>
-            
+
           </li>
           <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -149,7 +149,7 @@
               </li> --}}
               <li class="nav-item dropdown">
                 <a id="navbarDropdownMenuLink" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                  <i class="material-icons">person</i>  
+                  <i class="material-icons">person</i>
                   {{ Auth::user()->name }}
                 </a>
 
@@ -170,4 +170,3 @@
         </div>
       </nav>
       <!-- End Navbar -->
-      

@@ -31,14 +31,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::middleware(['site'])->group(function () {
+Route::middleware(['auth'])->group(function () {
 
 
 //Route::get('/dashboardd', function () {
 //    return view('Dashboard/Dashboard');
 //})->middleware(['auth'])->name('Dashboard');
-    Route::get('/Dashboard',[HomeController::class,'index']);;
-    Route::resource('/brand', BrandController::class);
+    Route::get('/Dashboard',[HomeController::class,'index'])->middleware('site');;
+    Route::resource('/brand', BrandController::class)->middleware('site');
     Route::resource('/slider', SliderController::class);
     Route::resource('/category', CategoryController::class);
     Route::resource('/product', ProductController::class);

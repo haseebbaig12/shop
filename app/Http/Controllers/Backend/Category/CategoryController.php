@@ -25,10 +25,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $user = Auth::user()->id;
-        // $user = userSite::where('user',$user);
-        $site_id= userSite::where('user',$user)->get()->first();
-        $category = Category::where('userID',$user)->where('siteID',$site_id->site)->get();
+        $category = Category::where('userID',session()->get('id'))->where('siteID',session()->get('site'))->get();
         return view('backend/category/index', compact('category'));
     }
 
@@ -39,9 +36,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $id = Auth::user()->parentID;
+//        $id = Auth::user()->parentID;
         // below $language from language Model
-        $language = $this->user->language($id);
+        $language = session()->get('language');
+
         return view('backend/category/add',compact('language'));
     }
 
@@ -53,6 +51,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+
         $main = $request->file('image');
         $filenamemain = rand(1000,100000000) . '.' . $main->getClientOriginalExtension();
         $main->move(public_path('backend/img/category/'), $filenamemain);
@@ -72,6 +71,7 @@ class CategoryController extends Controller
        $category = Category::create($data);
        $category_id = $category->id;
     //    dd($category_id);
+
        $text = array();
        for ($x = 0; $x < sizeof($request['language']); $x++) {
            // dd($request['name']);
