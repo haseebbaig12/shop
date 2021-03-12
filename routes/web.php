@@ -19,6 +19,8 @@ use App\Http\Controllers\Frontend\SingleProductController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\LanguageSwitcher;
+use App\Http\Controllers\Backend\Post\PostsController;
+use App\Http\Controllers\Frontend\blog\BlogController;
 
 use App\Http\Controllers\Frontend\HomeController as frontend;
 
@@ -61,6 +63,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/locale', LocaleController::class);
     Route::post('/categori/{id}', [CategoryController::class,'update']);
     Route::post('demo/{id}', [CategoryController::class,'update']);
+    Route::resource('/posts', PostsController::class);
+    Route::post('/upload', [PostsController::class,'upload']);
 });
 require __DIR__.'/auth.php';
 
@@ -71,3 +75,5 @@ Route::resource('/languages', LanguageSwitcher::class);
 Route::resource('/', Home::class);
 Route::resource('/cart', CartController::class);
 Route::resource('/checkout', CheckoutController::class);
+Route::resource('/blog',BlogController::class);
+Route::get('/post/{slug}', [BlogController::class,'singlepost']);

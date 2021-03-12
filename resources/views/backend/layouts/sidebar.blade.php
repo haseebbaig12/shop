@@ -56,7 +56,14 @@
               <i class="material-icons">dashboard</i>
               Brands
             </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route ('posts.index')}}" >
+            <i class="material-icons">dashboard</i>
+            Posts
+          </a>
 
+        </li>
           </li>
           <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
