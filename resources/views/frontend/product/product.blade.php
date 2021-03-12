@@ -5,8 +5,7 @@
 @section('content')
 
 <div class="body">
-   
-   
+    
     <div role="main" class="main shop pt-4">
 
         <div class="container">
@@ -14,7 +13,7 @@
             <div class="masonry-loader masonry-loader-showing">
                 <div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
                    {{-- @dd($product); --}}
-                    @foreach ($product as $products)
+                    @foreach ($compproduct as $products)
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="product mb-0">
                             <div class="product-thumb-info border-0 mb-3">
@@ -25,7 +24,7 @@
                                     </a>
                                 </div>
 
-                                <a href="{{route('single-product.edit',$products->slug)}}" class="quick-vie text-uppercase font-weight-semibold text-2">
+                                <a href="{{route('single-product.edit',$products['slug'])}}" class="quick-vie text-uppercase font-weight-semibold text-2">
                                      VIEW Detail
                                 </a>
                                 <a href="shop-product-sidebar-left.html">
@@ -37,7 +36,7 @@
                             <div class="d-flex justify-content-between">
                                 <div>
                                     <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-1">sports</a>
-                                    <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary">Golf Bag</a></h3>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary">{{$products['name']}}</a></h3>
                                 </div>
                             </div>
                             <div title="Rated 5 out of 5">

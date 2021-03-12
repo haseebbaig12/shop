@@ -73,19 +73,32 @@
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Class Schedule <span
-                                class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Class Schedule </a>
                     </li>
                     <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Subscribe Now <span
-                                class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Subscribe Now </a>
                     </li>
                     </li>
                     <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Academy page <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Academy page </a>
                     </li>
                     <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Contact Us<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                     <li class="nav-item active btn">
+                        <a class="nav-link" href="#">language</a>
+                        @php
+                          $language= DB::table('languages')->where('status',1)->get();   
+                        @endphp
+                        @foreach($language as $languages)
+                        <form action="{{route ('languages.update',$languages->sku)}}" method="POST" >
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="language" value="{{$languages->id}}">
+                            <button class="nav-link">{{$languages->name}}</button>
+                        </form>
+                   
+                        @endforeach
                     </li>
                 </ul>
                 <button type="button" class="btn btn-light mx-5">login</button>
@@ -93,7 +106,6 @@
                     <div class="col-8 d-flex p-0">
                         <img class="face-1" src="{{asset('frontend/img/facebook-01.png')}}" alt="">
                         <img class="face-1"  src="{{asset('frontend/img/instagram.png')}}" alt="">
-                        
                     </div>
                     <div class="col-4 px-5"></div>
                 </div>

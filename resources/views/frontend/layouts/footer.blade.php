@@ -2,7 +2,7 @@
     <div class="row m-0 py-3">
         <div class="col-3 d-flex px-5">
             <img class=" muzaa" src="{{asset('frontend/img/LOGO.PNG')}}" alt="">
-
+ 
         </div>
         <div class="col-8 py-1">
             

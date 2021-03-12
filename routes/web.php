@@ -17,6 +17,7 @@ use App\Http\Controllers\Frontend\ProductController as Product;
 use App\Http\Controllers\Frontend\SingleProductController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\LanguageSwitcher;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,6 +63,7 @@ require __DIR__.'/auth.php';
 
 Route::resource('/shop', Product::class);
 Route::resource('/single-product', SingleProductController::class);
+Route::resource('/languages', LanguageSwitcher::class);
 Route::resource('/', Home::class);
 Route::resource('/cart', CartController::class);
 Route::resource('/checkout', CheckoutController::class);
