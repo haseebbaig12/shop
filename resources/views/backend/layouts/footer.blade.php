@@ -346,5 +346,34 @@
         }
     });
 </script>
+      <script type="text/javascript">
+
+          $(document).ready(function(){
+
+              var maxField = 10; //Input fields increment limitation
+              var addButton = $('.add_button'); //Add button selector
+              var wrapper = $('.ajeeb2'); //Input field wrapper
+              var fieldHTML = jQuery('.multiple_branches');
+              var fieldHTML2 = '<a href="javascript:void(0);" class="remove_button btn btn-dark mx-1">Cancel</a>';
+              var x = 1; //Initial field counter is 1
+
+              //Once add button is clicked
+              $(addButton).click(function(){
+                  //Check maximum number of input fields
+                  if(x < maxField){
+                      x++; //Increment field counter
+                      // $(wrapper).append(fieldHTML); //Add field html
+                      $(wrapper).append($(fieldHTML).clone());
+                  }
+              });
+
+              //Once remove button is clicked
+              $(wrapper).on('click', '.remove_button', function(e){
+                  e.preventDefault();
+                  $(this).parent('div').parent('div').parent('div').parent('div').remove(); //Remove field html
+                  x--; //Decrement field counter
+              });
+          });
+      </script>
 </body>
 </html>

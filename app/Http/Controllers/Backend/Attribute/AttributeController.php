@@ -39,7 +39,7 @@ class AttributeController extends Controller
     {
         $id = Auth::user()->parentID;
         // below $language from language Model
-        $language = $this->user->language($id);
+        $language = session()->get('language');
         return view('backend/attribute/add',compact('language'));
     }
 
@@ -136,24 +136,14 @@ class AttributeController extends Controller
        $attribute->update($data);
     //    dd($category);
        $text = array();
-
        for ($x = 0; $x < sizeof($request['name']); $x++) {
-        $categorytext = AttributeText::where('attributeID',$id)->where('language',$request['language'][$x])->get()->first();
-        if($categorytext){
            $text = array(
                "name" =>$request['name'][$x],
                );
+               $categorytext = AttributeText::where('attributeID',$id)->where('language',$request['language'][$x])->get()->first();
                $categorytext->update($text);
-            }else{
-                    $text = array(
-                        "attributeID" => $attribute_id,
-                        "name" =>$request['name'][$x],
-                        "language" => $request['language'][$x],
-                        );
-                        AttributeText::create($text);
-            }
        }
-            return redirect('category');
+            return redirect('attribute');
         }else{
             return abort('404');
         }

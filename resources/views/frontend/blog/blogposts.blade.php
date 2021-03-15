@@ -3,17 +3,21 @@
    KAF JIU JITSU
 @endsection
 @section('content')
-<div class="card-group">
+
     @foreach ( $postcomplete as $posts )
-    <div class="card">
-     {{-- <a href="{{ route('single.post', array) }}" > --}}
-     <img class="card-img-top" height="300px" width="100px" src="backend/img/postimages/{{ $posts['postimage'] }}" alt="Card image cap"> </a>
-      <div class="card-body">
-        <h3 class="card-title">{{ $posts['posttitle'] }}</h3>
-        <p class="card-text">{{Str::limit($posts['short_desc'],100 )}}<a href="{{ url('post', $posts['posturl']) }}">Read More</a> </p>
-        <p class="card-text"><small class="text-muted">{{ date('M j, Y', strtotime($posts['postdate'])) }}</small></p>
-      </div>
-    </div>
+        <div class="row mx-5 pb-4">
+            <div class="col-lg-3 col-md-12 col-sm-12 ">
+                <img class="ees" src="backend/img/postimages/{{ $posts['postimage'] }}"  alt="">
+            </div>
+
+            <div class="col-lg-9 col-md-12 col-sm-12 w-75 ">
+                <h2 class="eed">{{ $posts['posttitle'] }}</h2>
+                <span>yasir</span>  <span>12/13/14</span>
+                <p class="rrf">{{Str::limit($posts['short_desc'],200 )}}<a href="{{ url('post', $posts['posturl']) }}">Read More</a></p>
+                <hr>
+            </div>
+
+        </div>
     @endforeach
-  </div>
+
 @endsection

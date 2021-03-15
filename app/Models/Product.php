@@ -12,6 +12,8 @@ class Product extends Model
         'status',
         'user_id',
         'site_id',
+        'meta_title',
+        'meta_description',
     ];
 
 }
