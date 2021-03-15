@@ -17,15 +17,19 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $compproduct  = array(); 
-        $cart = session()->get('cart');
+//        dd(session()->get('language')[0]['id']);
+//        $compproduct  = array();
+//        $cart = session()->get('cart');
+//        dd($cart);
         // dd($cart);
         $product= Product::where('status',1)->get();
-        $producttext= ProductText::where('language',$cart['language'])->get();
-        
+        $producttext= ProductText::where('language',2)->get();
+
       foreach( $product as $products){
-        $producttext= ProductText::where('product_id',$products->id)->where('language',$cart['language'])->get()->first();
+        $producttext= ProductText::where('product_id',$products->id)->where('language',2)->get()->first();
+//        dd($producttext);
         $productimg = ProductImage::where('product_id',$products->id)->get()->first();
+
         $compproduct[]= [
           'slug'=>  $products->slug,
           'id' => $products->id,
@@ -36,8 +40,8 @@ class ProductController extends Controller
         //   'image' => $productimg->image,
         ];
     }       return view('frontend.product.product',compact('compproduct'));
-   
-       
+
+
     }
 
     /**
