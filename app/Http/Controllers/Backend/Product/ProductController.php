@@ -200,9 +200,9 @@ if($request['image']){
      */
     public function update(Request $request,$id)
     {
-    $user = session()->get('id');
-    $site_id= userSite::where('user',$user)->get()->first();
-    $product= Product::where('id',$id)->where('site_id',$site_id->site)->get()->first();
+//    $user = session()->get('id');
+//    $site_id= userSite::where('user',$user)->get()->first();
+    $product= Product::where('id',$id)->where('site_id',session()->get('site'))->get()->first();
     $basic=[
         'slug'=>$request->slug,
         'status'=>$request->status,
