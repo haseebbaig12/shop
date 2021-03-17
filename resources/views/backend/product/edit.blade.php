@@ -57,6 +57,13 @@
           <div class="col-md-12">
             <button type="submit" class="btn btn-primary pull-left">Publish</button>
           </div>
+            <div class="col-md-12">
+                <p>Please Upload Your Feature Image</p>
+                <img class="d-block" height="200px" width="200px" src="{{asset('backend/img/product')}}/{{$product->feature_image}}" alt="">
+                <div class="input-group input-group-sm">
+                    <input type="file" name="feature_image"  class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
+                </div>
+            </div>
           @foreach ($product_image as $image)
           <div class="col-md-12">
             <img class="d-block" height="200px" width="200px" src="{{asset('backend/img/product')}}/{{$image->image}}" alt="">
@@ -104,7 +111,7 @@
                             <div class="col-md-12">
                                   <div class="form-group">
                                     <label class="bmd-label-floating">TITLE</label>
-                                  <input type="text" value="{{isset($text['title']) ? $text['title'] : '' }}" name="name[]" class="form-control">
+                                  <input type="text" value="{{isset($text['name']) ? $text['name'] : '' }}" name="name[]" class="form-control">
                                     <input type="hidden" name="language[]" value="{{$text['lanId']}}" class="form-control">
                                   </div>
                             </div>
@@ -201,6 +208,8 @@
                                   <div class="form-group">
                                     <label class="bmd-label-floating">Price</label>
                                   <input type="text" name="price[]" value="{{$type['price']}}" class="form-control">
+                                      <input type="hidden" name="price[]" value="{{$type['id']}}" class="form-control">
+
                                   </div>
                                 </div>
                                </div>

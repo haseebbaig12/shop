@@ -129,12 +129,12 @@ $indexdata[]=array(
             }
 
         }
-
         return view('backend.posts.edit',compact('data','datatext','lang','cat'));
     }
 
     public function update(Request $request, $id)
     {
+
         $user = Auth::user()->id;
         $site_id= usersite::where('user',$user)->get()->first();
         $updatepost = Posts::where('id',$id)->where('userID',$user)->get()->first();

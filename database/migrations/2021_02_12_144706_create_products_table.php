@@ -17,8 +17,9 @@ class CreateProductsTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('slug');
             $table->integer('status');
-            $table->string('meta_title');
-            $table->text('meta_description');
+            $table->string('meta_title')->nullable();
+            $table->string('feature_image')->nullable();
+            $table->text('meta_description')->nullable();
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('site_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

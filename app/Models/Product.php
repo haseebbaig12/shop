@@ -14,6 +14,7 @@ class Product extends Model
         'site_id',
         'meta_title',
         'meta_description',
+        'feature_image',
     ];
 
 }

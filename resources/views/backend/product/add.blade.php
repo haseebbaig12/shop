@@ -134,8 +134,16 @@
           <div class="col-md-12">
             <button type="submit" class="btn btn-primary pull-left">Publish</button>
           </div>
+
+            <div class="col-md-12">
+                <p>Please Upload Your Feature Image</p>
+                <div class="input-group input-group-sm">
+                    <input type="file" name="feature_image" class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
+                </div>
+            </div>
+
           <div class="col-md-12">
-            <p style="font-size:10px;margin:0;">Please Upload Your Banner Image</p>
+              <p>Please Upload Your Product Images</p>
               <div class="input-group input-group-sm">
                 <input type="file" name="image[]" class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
                 <input type="hidden" name="image_id[]" value="1" class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">

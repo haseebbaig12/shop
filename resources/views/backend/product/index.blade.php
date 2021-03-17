@@ -31,7 +31,7 @@ Product - Cooutfits
                     <td>1</td>
                     <td>
                       <a href="{{route('product.edit',$products->id)}}">
-                      <img class="d-block" height="60px" width="60px" src="{{asset('backend/img/product')}}/{{$productimage->image}}" alt="">
+                      <img class="d-block" height="60px" width="60px" src="{{asset('backend/img/product')}}/{{$products->feature_image}}" alt="">
                       </a>
                     </td>
                     <td>
