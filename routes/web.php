@@ -41,17 +41,17 @@ use App\Http\Controllers\Frontend\HomeController as frontend;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth'])->name('dashboard');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','site','usersite'])->group(function () {
 
 
 //Route::get('/dashboardd', function () {
 //    return view('Dashboard/Dashboard');
 //})->middleware(['auth'])->name('Dashboard');
-    Route::get('/Dashboard',[HomeController::class,'index'])->middleware('site');;
+    Route::get('/Dashboard',[HomeController::class,'index'])->name('Dashboard');
     Route::resource('/brand', BrandController::class)->middleware('site');
     Route::resource('/slider', SliderController::class);
     Route::resource('/category', CategoryController::class);
@@ -77,7 +77,7 @@ require __DIR__.'/auth.php';
 Route::resource('/shop', Product::class);
 Route::resource('/single-product', SingleProductController::class);
 Route::resource('/languages', LanguageSwitcher::class);
-Route::resource('/', Home::class);
+Route::get('/', [Home::class,'index'])->name('Home');
 Route::resource('/cart', CartController::class);
 Route::resource('/checkout', CheckoutController::class);
 Route::resource('/blog',BlogController::class);

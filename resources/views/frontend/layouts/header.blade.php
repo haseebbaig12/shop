@@ -11,7 +11,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
         <link _ngcontent-qir-c48="" rel="stylesheet" href="//fonts.googleapis.com/css?kit=tss5AopFczcE_wznPz-F8xbfxceEzGlaw9cIPzBu1BOYtHnsSURAjU_1uvvwfndqEAM">
-    
+
     <!-- Vendor CSS -->
 		<link rel="stylesheet" href="{{asset('frontend/vendor/bootstrap/css/bootstrap.min.css')}}">
 		<link rel="stylesheet" href="{{asset('frontend/vendor/fontawesome-free/css/all.min.css')}}">
@@ -39,8 +39,8 @@
 
 		<!-- Head Libs -->
 		<script src="{{asset('frontend/vendor/modernizr/modernizr.min.js')}}"></script>
-    
-    
+
+
         <title> @yield('title')</title>
 </head>
 
@@ -50,15 +50,19 @@
             <a class="navbar-brand" href="#">
                 <div class="eed"></div>
                 <div class="row">
+{{--
               <div class="col-lg-2 col-md-0 col-sm-0"></div>
-                    <div class="col-6">
+--}}
+                    <div class="col-12">
                         <img class="img-11" src="{{asset('frontend/img/logo.png')}}" alt="">
 
                     </div>
+{{--
                     <div class="col-lg-2 col-md-0 col-sm-0"></div>
+--}}
                 </div>
             </a>
-            
+
             <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -87,8 +91,8 @@
                     </li>
                      <li class="nav-item active btn">
                         <a class="nav-link" href="#">language</a>
-                        @php
-                          $language= DB::table('languages')->where('status',1)->get();   
+                       {{-- @php
+                          $language= DB::table('languages')->where('status',1)->get();
                         @endphp
                         @foreach($language as $languages)
                         <form action="{{route ('languages.update',$languages->sku)}}" method="POST" >
@@ -97,11 +101,11 @@
                             <input type="hidden" name="language" value="{{$languages->id}}">
                             <button class="nav-link">{{$languages->name}}</button>
                         </form>
-                   
-                        @endforeach
+
+                        @endforeach--}}
                     </li>
                 </ul>
-                <button type="button" class="btn btn-light mx-5">login</button>
+                <a href="{{url('/login')}}"><button type="button" class="btn btn-light mx-3">login</button></a>>
                 <div class="row">
                     <div class="col-8 d-flex p-0">
                         <img class="face-1" src="{{asset('frontend/img/facebook-01.png')}}" alt="">
@@ -111,6 +115,6 @@
                 </div>
 
             </div>
-            
+
         </nav>
     </header>
