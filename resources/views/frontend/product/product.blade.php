@@ -28,7 +28,7 @@
                                 </a>
                                 <a href="shop-product-sidebar-left.html">
                                     <div class="product-thumb-info-image">
-                                        <img alt="" class="img-fluid" src="{{asset('frontend/img/products/product-grey-2.jpg')}}">
+                                        <img alt="" class="img-fluid" src="{{asset('frontend/img/instagram.png')}}">
                                     </div>
                                 </a>
                             </div>
