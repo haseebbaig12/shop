@@ -8,6 +8,7 @@ body{
      src: url(../font/eurostile/EurostileBold.ttf);
 
  }
+
 img.ees {
     height: 160px;
     margin: 0px 5pc;
@@ -21,6 +22,8 @@ h2.eed {
 /*    width: 54%;*/
 /*    font-family: cursive;*/
 /*}*/
+=======
+
  .parend{
 
      background-image: url(../img/martial-arts-hero-section-bg1.jpg);
@@ -106,8 +109,12 @@ h2.eed {
  .btn-5 {
      text-align: center;
  }
- nav.navbar.navbar-expand-lg {
-     background: #0000;
+nav.navbar.navbar-expand-lg {
+    background: #000000;
+    z-index: 99;
+}
+ .homepage nav.navbar.navbar-expand-lg {
+     background: #0000 !important;
      z-index: 99;
  }
  /* nav.navbar.navbar-expand-lg {
@@ -117,7 +124,7 @@ h2.eed {
      text-align: center;
      color: #cacacb;
      font-weight: bold;
-     font-size: 77px;
+     font-size: 77px !important;
      padding-bottom: 22px;
      font-family: 'EurostileBold';
  }
@@ -130,7 +137,7 @@ h2.eed {
  }
  h1.text-5 {
      text-align: center;
-     font-size: 68px;
+     font-size: 68px !important;
      color: white;
      font-weight: bold;
      font-family: 'EurostileBold';
@@ -151,7 +158,7 @@ h2.eed {
  }
  h1.text-6 {
      text-align: center;
-     font-size: 86px;
+     font-size: 86px !important;
      color: #cacacb;
      font-family: 'EurostileBold';
  }
@@ -269,8 +276,13 @@ h2.eed {
      width: 4rem;
      transform: translateY(-1rem);
      height: 60px;
+
      width: 18%;
      margin: 12px auto;
+
+/*      width: 25%;
+     margin: 23px auto; */
+
 
  }
 
@@ -360,11 +372,14 @@ h2.eed {
  .mjh {
      height: 182px;
  }
- footer.footer {
-     background-color: black;
-     color: white;
-     height: 72px;
- }
+footer.footer {
+    background-color: black;
+    color: white;
+    /* height: 72px; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
  .active,.btn:hover {
      border-bottom:1px solid white ;
       color: white;
@@ -559,7 +574,8 @@ h2.eed {
       width: 100%;
       position: relative;
       right: 12px;
-     } */
+     }
+
       .parend {
          width: 1375px;
      }
