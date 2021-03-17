@@ -5,7 +5,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Auth;
 use App\Models\Category;
+use App\Models\Attribute;
+use App\Models\Variation;
+use App\Models\ProductCategory;
 use App\Models\ProductText;
+use App\Models\ProductType;
 use App\Models\ProductImage;
 use App\Models\Language;
 use App\Models\userSite;
@@ -25,12 +29,14 @@ class ProductController extends Controller
     }
     public function index()
     {
-//        $user = Auth::user()->id;
-//        // $user = userSite::where('user',$user);
-//        $site_id= userSite::where('user',$user)->get()->first();
+        $user = Auth::user()->id;
+        $site_id= userSite::where('user',$user)->get()->first();
+        $product = Product::where('user_id',$user)->where('site_id',$site_id->site)->get();
+        foreach ($product as $products){
+        $productimage = ProductImage::where('product_id',$products->id)->get()->first();
+    }
 
-        $product = Product::where('user_id',session()->get('id'))->where('site_id',session()->get('site'))->get();
-        return view('backend/product/index', compact('product'));
+        return view('backend/product/index', compact('product','productimage'));
     }
 
     /**
@@ -40,12 +46,15 @@ class ProductController extends Controller
      */
     public function create()
     {
-//        $id = Auth::user()->parentID;
+        $id = Auth::user()->parentID;
+        $admin = Auth::user()->id;
         // below $language from language Model
         $language = session()->get('language');
-
-//        $site_id= userSite::where('user',$id)->get()->first();
-        return view('backend/product/add',compact('language'));
+        $site_id= userSite::where('user',$admin)->get()->first();
+        $attribute= Attribute::where('userID',$admin)->where('siteID',$site_id->site)->get();
+        $variation= Variation::where('userID',$admin)->where('siteID',$site_id->site)->get();
+        $category= Category::where('userID',$admin)->where('siteID',$site_id->site)->where('status',1)->get();
+        return view('backend/product/add',compact('language','attribute','variation','category'));
     }
 
     /**
@@ -56,18 +65,28 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+//         dd($request);
     $id = Auth::user()->id;
     $site_id= userSite::where('user',$id)->get()->first();
     $basic=[
         'slug'=>$request->slug,
         'status'=>$request->status,
+        'meta_title'=>$request->meta_title,
+        'meta_description'=>$request->meta_description,
         'site_id'=>$site_id->site,
         'user_id'=>$id,
     ];
     $productcreate =Product::create($basic);
     $product_id= $productcreate->id;
-
-
+    $product_cat = array();
+        for ($x = 0; $x < sizeof($request['category']); $x++) {
+            // dd($request['name']);
+            $product_cat = array(
+                "productID" => $product_id,
+                "categoryID" => $request['category'][$x],
+                );
+                ProductCategory::create($product_cat);
+        }
     $text = array();
         for ($x = 0; $x < sizeof($request['name']); $x++) {
             // dd($request['name']);
@@ -80,14 +99,29 @@ class ProductController extends Controller
                 );
              ProductText::create($text);
         }
-    $images = array();
+    $product_var = array();
+    if($request['variation']){
+        for ($x = 0; $x < sizeof($request['variation']); $x++) {
+            $product_var = array(
+                "product_id" => $product_id,
+                "variation" =>$request['variation'][$x],
+                "attribute" => $request['attribute'][$x],
+                "price" => $request['price'][$x],
+                "ide" => rand(10,100000000),
 
+                );
+                // dd($product_var);
+                ProductType::create($product_var);
+        }
+    }
+    $images = array();
+if($request['image']){
         for ($x =0 ; $x < sizeof($request['image']); $x++) {
             // dd($request['image']);
             // dd("p");
             $image = $request->file('image')[$x];
             $filenameimage[$x] = rand(1000,100000000) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('backend/img/category/'), $filenameimage[$x]);
+            $image->move(public_path('backend/img/product/'), $filenameimage[$x]);
             // dd($filenameimage);
             $images = array(
                 "product_id" => $product_id,
@@ -96,6 +130,7 @@ class ProductController extends Controller
             );
             ProductImage::create($images);
         }
+    }
         return redirect('product');
     }
 
@@ -118,14 +153,42 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $user = Auth::user()->id;
-        $site_id= userSite::where('user',$user)->get()->first();
-        $language = Language::where('user_id',$user)->where('site_id',$site_id->site)->where('status',1)->get();
-        $product = Product::where('id',$id)->where('user_id',$user)->where('site_id',$site_id->site)->get()->first();
+    $data = array();
+       $language = Language::where('site_id',session()->get('site'))->where('status',1)->get();
+       $product = Product::where('id',$id)->where('site_id',session()->get('site'))->get()->first();
+        $category = Category::where('siteID',session()->get('site'))->get();
         $product_image = ProductImage::where('product_id',$id)->get();
-        $product_text = ProductText::where('product_id',$id)->get();
+        $product_category = ProductCategory::where('productID',$id)->get();
+        $attribute= Attribute::where('siteID',session()->get('site'))->get();
+        $variation= Variation::where('siteID',session()->get('site'))->get();
+        $product_type= ProductType::where('product_id',$id)->get();
 
-        return view('backend/product/edit',compact('language','product','product_image','product_text'));
+        foreach($language as $lang){
+            $product_text = ProductText::where('language',$lang->id)->where('product_id',$id)->get()->first();
+            $category = Category::where('siteID',session()->get('site'))->get();
+            if($product_text!=Null ){
+                $data[]=[
+                    'lanId'=>$lang['id'],
+                    'lanname'=>$lang['name'],
+                    'name'=>$product_text['name'],
+                    'title'=>$product_text['name'],
+                    'long_description'  => $product_text['long_description'],
+                    'short_description'  => $product_text['short_description'],
+                ];
+            }
+
+            elseif($product_text == Null){
+                $data[]=[
+                    'lanId'=>$lang['id'],
+                    'lanname'=>$lang['name'],
+                    'name'=>'',
+                    "long_description"  => '',
+                    "short_description"  =>'',
+                ];
+            }
+
+        }
+        return view('backend/product/edit',compact('language','product_image','product','data','category','attribute','variation','product_type','product_category'));
     }
 
     /**
@@ -137,13 +200,14 @@ class ProductController extends Controller
      */
     public function update(Request $request,$id)
     {
-
-    $user = Auth::user()->id;
-    $site_id= userSite::where('user',$user)->get()->first();
-    $product= Product::where('id',$id)->where('user_id',$user)->where('site_id',$site_id->site)->get()->first();
+//    $user = session()->get('id');
+//    $site_id= userSite::where('user',$user)->get()->first();
+    $product= Product::where('id',$id)->where('site_id',session()->get('site'))->get()->first();
     $basic=[
         'slug'=>$request->slug,
         'status'=>$request->status,
+        'meta_title'=>$request->meta_title,
+        'meta_description'=>$request->meta_description,
     ];
     $productcreate = $product->update($basic);
     $text = array();
@@ -157,18 +221,31 @@ class ProductController extends Controller
             $producttext = ProductText::where('product_id',$id)->where('language',$request['language'][$x])->get()->first();
             $producttext->update($text);
         }
-    $imagess = array();
-    $abc=$request['image'];
-        // for ($x = 0; $x < sizeof($request['image']); $x++) {
+        $product_var = array();
+        if($request['variation']){
+            for ($x = 0; $x < sizeof($request['variation']); $x++) {
+                $product_var = array(
+                    "variation" =>$request['variation'][$x],
+                    "attribute" => $request['attribute'][$x],
+                    "price" => $request['price'][$x],
+                    );
+                    // dd($product_var);
+                   $type = ProductType::where('product_id',$id)->where('id',$request['typeID'][$x]);
+                   if($type){
+                    $type->update($product_var);
+                   }
+
+            }
+        }
+            $imagess = array();
+            $abc=$request['image'];
+            // for ($x = 0; $x < sizeof($request['image']); $x++) {
             foreach($abc as $key=>$value){
-
-
-
             $image = $request->file('image')[$key];
 
             $filenameimage[$key] = rand(1000,100000000) . '.' . $image->getClientOriginalExtension();
 
-            $image->move(public_path('backend/img/category/'), $filenameimage[$key]);
+            $image->move(public_path('backend/img/product/'), $filenameimage[$key]);
 
         //    dd($filenameimage);
             $imagess = array(

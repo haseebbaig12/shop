@@ -37,7 +37,7 @@
               <img class="d-block" height="200px" width="200px" src="{{asset('backend/img/category')}}/{{$data->image}}" alt="">
           </div>
         </div>
-        
+
 
       </div>
 
@@ -56,44 +56,41 @@
                     </div>
                     <div class="col-md-12">
                       <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        @foreach($language as $languages)
+                        @foreach($categorydata as $languages)
                         <li class="nav-item">
-                          <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{$languages->language}}{{$languages->id}}" role="tab" aria-controls="home" aria-selected="true">{{$languages->language}}</a>
+                          <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{$languages['languagename']}}{{$languages['languageid']}}" role="tab" aria-controls="home" aria-selected="true">{{$languages['languagename']}}</a>
                         </li>
                         @endforeach
                       </ul>
                       <div class="tab-content" id="myTabContent">
-                        @foreach($language as $languages)
-                        @php
-                        $text = DB::table('category_texts')->where('categoryID',$data->id)->where('language',$languages->id)->get()->first();
-                        @endphp
-     
-                        <div class="tab-pane fade" id="{{$languages->language}}{{$languages->id}}" role="tabpanel" aria-labelledby="home-tab">
+                        @foreach($categorydata as $languages)
+
+                        <div class="tab-pane fade" id="{{$languages['languagename']}}{{$languages['languageid']}}" role="tabpanel" aria-labelledby="home-tab">
                           <div class="row">
                             <div class="col-md-12">
-                              <p class="my-3" style="font-size:10px;margin:0;">Please Upload Data in {{$languages->language}} </p>
+                              <p class="my-3" style="font-size:10px;margin:0;">Please Upload Data in {{$languages['languagename']}} </p>
                             </div>
                             <div class="col-md-12">
                                   <div class="form-group">
                                     <label class="bmd-label-floating">TITLE</label>
-                                    <input type="text" name="name[]" value="{{isset($text->title) ? $text->title : '' }}" class="form-control">
-                                    <input type="hidden" name="language[]" value="{{$languages->id}}" class="form-control">
+                                    <input type="text" name="name[]" value="{{$languages['title'] }}" class="form-control">
+                                    <input type="hidden" name="language[]" value="{{$languages['languageid']}}" class="form-control">
                                   </div>
                             </div>
                             <div class="col-md-12">
                               <div class="form-group">
                                 <label class="bmd-label-floating">Short Description</label>
-                                  <textarea name="short_description[]"  class="form-control" name="" id="editor" cols="30" rows="10">{{isset($text->short_description) ? $text->short_description : '' }}</textarea>
+                                  <textarea name="short_description[]"  class="form-control" name="" id="editor" cols="30" rows="10">{{$languages['short_description']}}</textarea>
                               </div>
                             </div>
-                            
+
                           </div>
                         </div>
                         @endforeach
                       </div>
-              
-                      
-                      
+
+
+
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
@@ -114,8 +111,8 @@
                       </div>
                     </div>
                   </div>
-                  
-                
+
+
                   <div class="clearfix"></div>
               </div>
             </div>

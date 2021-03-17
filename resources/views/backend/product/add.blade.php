@@ -6,61 +6,7 @@
 <form action="{{url ('product')}}" method="POST" enctype="multipart/form-data">
   @csrf
     <div class="row">
-      <div class="col-md-3">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              {{-- <label class="bmd-label-floating">Language</label> --}}
-              <select name="status" id=""  class="form-control">
-                <option class="dropdown-item">Status</option>
-                <option value="1" class="dropdown-item">Enabled</option>
-                <option value="0" class="dropdown-item">Disabled</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <button type="submit" class="btn btn-primary pull-left">Publish</button>
-          </div>
-          <div class="col-md-12">
-            <p style="font-size:10px;margin:0;">Please Upload Your Banner Image</p>
-              <div class="input-group input-group-sm">
-                <input type="file" name="image[]" class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
-                <input type="hidden" name="image_id[]" value="1" class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
-              </div>
-          </div>
-          <div class="col-md-12">
-            <p style="font-size:10px;margin:0;">Please Upload Your Main Image</p>
-              <div class="input-group input-group-sm">
-                <input type="file" name="image[]" class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
-                <input type="hidden" name="image_id[]" value="2"  class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
-              </div>
-          </div>
-          {{-- <div class="col-md-12">
-            <p style="font-size:10px;margin:0;">Please Upload Your Main Image</p>
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-            <main class="main_full">
-              <div class="container">
-                <div class="panel">
-                  <div class="button_outer">
-                    <div class="btn_upload">
-                      <input type="file" id="upload_file" name="">
-                      Upload Image
-                    </div>
-                    <div class="processing_bar"></div>
-                    <div class="success_box"></div>
-                  </div>
-                </div>
-                <div class="error_msg"></div>
-                <div class="uploaded_file_view" id="uploaded_view">
-                  <span class="file_remove">X</span>
-                </div>
-              </div>
-            </main>
-          </div> --}}
-        </div>
 
-
-      </div>
 
       <div class="col-md-9">
             <div class="card">
@@ -76,11 +22,10 @@
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <ul class="nav nav-tabs p-0" id="myTab" role="tablist">
                         @foreach($language as $languages)
-
                         <li class="nav-item">
-                          <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{$languages['name']}}{{$languages['id']}}" role="tab" aria-controls="home" aria-selected="true">{{$languages['name']}}</a>
+                          <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{$languages['name']}}{{$languages->id}}" role="tab" aria-controls="home" aria-selected="true">{{$languages['name']}}</a>
                         </li>
                         @endforeach
                       </ul>
@@ -110,50 +55,137 @@
                                   <textarea class="form-control" name="long_description[]" id="editor2" cols="30" rows="10"></textarea>
                               </div>
                             </div>
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <label class="bmd-label-floating">Price</label>
-                                  <input class="form-control" name="" id="" >
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                  <select class="form-control" name="" id="" cols="30" rows="10">
-                                    <option>Currency</option>
-                                    <option>AE</option>
-                                    <option>USD</option>
-                                  </select>
-                              </div>
-                            </div>
                           </div>
                         </div>
                         @endforeach
                       </div>
-
-
-
                     </div>
-
                   </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="bmd-label-floating">Meta Title</label>
+                          <input name="meta_title" type="text" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="bmd-label-floating">Meta Description</label>
+                          <textarea class="form-control" name="meta_description" id="editor2" cols="30" rows="10"></textarea>
+                      </div>
+                  </div>
+                  <div class="clearfix"></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">Option</h4>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="">Type</label>
+                      </div>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="form-group">
+                         <label for="">Configurable</label>
+                      </div>
+                    </div>
+                    <div class="col-md-1">
+                      <div class="form-group">
+                        <a href="javascript:void(0);" class="add_button" title="Add field"><i class="fas fa-plus"></i></a>
+                      </div>
+                    </div>
+                      <div class="col-md-12">
+                           <div class="ajeeb2">
+                               <div class="input-group mb-3">
 
-
+                              </div>
+                          </div>
+                      </div>
+                  </div>
                   <div class="clearfix"></div>
               </div>
             </div>
       </div>
+      <div class="col-md-3">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              {{-- <label class="bmd-label-floating">Language</label> --}}
+              <select name="status" id=""  class="form-control">
+                <option class="dropdown-item">Status</option>
+                <option value="1" class="dropdown-item">Enabled</option>
+                <option value="0" class="dropdown-item">Disabled</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+                <select class="form-control " name="category[]" id="" cols="30" rows="10">
+                  <option  class="dropdown-item">Select Category</option>
+                  @foreach ($category as $categories)
+                  <option  class="dropdown-item"  value="{{$categories->id}}">{{$categories->code}}</option>
+                  @endforeach
+                </select>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary pull-left">Publish</button>
+          </div>
+          <div class="col-md-12">
+            <p style="font-size:10px;margin:0;">Please Upload Your Banner Image</p>
+              <div class="input-group input-group-sm">
+                <input type="file" name="image[]" class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
+                <input type="hidden" name="image_id[]" value="1" class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
+              </div>
+          </div>
+          <div class="col-md-12">
+            <p style="font-size:10px;margin:0;">Please Upload Your Main Image</p>
+              <div class="input-group input-group-sm">
+                <input type="file" name="image[]" class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
+                <input type="hidden" name="image_id[]" value="2"  class="form-control border-0" name="image" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="cheque-img-upload">
+              </div>
+          </div>
+        </div>
+
+
+      </div>
     </div>
 </form>
+<div class="d-none">
+  <div class="multiple_branches ">
+   <div class="row">
+    <div class="col-md-5">
+      <div class="form-group">
+          <select class="form-control " name="attribute[]" id="" cols="30" rows="10">
+            <option  class="dropdown-item">Type</option>
+            @foreach ($attribute as $attributes)
+            <option  class="dropdown-item"  value="{{$attributes->id}}">{{$attributes->code}}</option>
+            @endforeach
+          </select>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="form-group">
+          <select class="form-control " name="variation[]" id="" cols="30" rows="10">
+            <option  class="dropdown-item">Configurable</option>
+            @foreach ($variation as $variations)
+            <option  class="dropdown-item" value="{{$variations->id}}">{{$variations->code}}</option>
+            @endforeach
+          </select>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label class="bmd-label-floating">Price</label>
+        <input type="text" name="price[]" class="form-control">
+      </div>
+</div>
+   </div>
+  </div>
+</div>
 
-<!--
-The classic file input element we'll enhance to a file pond
--->
-<input type="file"
-       class="filepond"
-       name="filepond"
-       multiple
-       data-max-file-size="3MB"
-       data-max-files="15" />
-
-<!-- file upload itself is disabled in this pen -->
 
 @endsection

@@ -1,8 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Backend\Page;
-use App\Http\Controllers\Controller;
+use Auth;
+use App\Models\Pages;
+use App\Models\PagesText;
+use App\Models\userSite;
+use App\Models\Language;
+use App\http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class PageController extends Controller
 {
@@ -11,9 +17,7 @@ class PageController extends Controller
     {
         $indexdata=array();
         $data= array();
-        $u_id = Auth::user()->id;
-        $data=$this->findUserdetail($u_id);  // $data is Function which is last in the controller
-
+        $data=$this->findUserdetail(session()->get('site'));  // $data is Function which is last in the controller
         foreach($data as $datas){
             $username = User::where('id',$datas->userID)->get()->pluck('name')->first();
             $indexdata[]=array(
@@ -30,18 +34,14 @@ class PageController extends Controller
 
     public function create()
     {
-        $user = Auth::user()->id;
-        $site=User::find($user)->site()->first();
-        $lang =Site::find($site->id)->language;
+        $lang = Language::where('site_id',session()->get('site'))->get();
         return view('backend/pages/add',compact('lang'));
     }
 
 
     public function store(Request $request)
     {
-
-        $user = Auth::user()->id;
-        $site_id= userSite::where('user',$user)->get()->first();
+        $site_id= userSite::where('site',session()->get('site'))->get()->first();
         $image = $request->file('image');
         $imageName = rand(1000,1000000).'.'.$image->getClientOriginalExtension();
         $image->move(public_path('backend/img/pagesimages'),$imageName);
@@ -52,7 +52,7 @@ class PageController extends Controller
             'meta_desc'=> $request->meta_desc,
             'status'=>$request->status,
             'image'=>$imageName,
-            'userID'=>$user,
+            'userID'=> session()->get('id'),
             'siteID'=>$site_id->site
         ];
         $pagesbasic = Pages::create($basic);
@@ -64,7 +64,6 @@ class PageController extends Controller
                 "title" => $request['title'][$x],
                 "page_text"  => $request['page_text'][$x],
                 "languageID" => $request['language'][$x]
-
             );
 
             PagesText::create($Text);
@@ -82,13 +81,36 @@ class PageController extends Controller
 
     public function edit($id)
     {
-        $user = Auth::user()->id;
-        $site=User::find($user)->site()->first();
-        $lang =Site::find($site->id)->language;
-        $data = Pages::where('id',$id)->where('siteID',$site->id)->get()->first();
-        $datatext = PagesText::where('pagesID',$data->id)->get();
+        $datatext=array();
+        $lang = Language::where('site_id',session()->get('site'))->get();
+//        dd($lang);
+        $pagedata = Pages::where('id',$id)->where('siteID',session()->get('site'))->get()->first();
 
-        return view('backend.pages.edit',compact('data','datatext','lang'));
+        foreach ($lang as $language){
+            $pagetext = PagesText::where('languageID',$language->id)->where('pagesID',$pagedata->id)->get()->first();
+            if($pagetext != Null){
+
+                $datatext[] = [
+                'lanId' =>$language->id,
+                'name'=>$language->name,
+                "title" => $pagetext['title'],
+                "page_text"  => $pagetext['page_text']
+                 ];
+            }
+
+
+            elseif($pagetext == Null){
+                $datatext[]=[
+                    'lanId' =>$language['id'],
+                    'name'=>$language['name'],
+                    "title" => '',
+                    "page_text"  => ''
+                ];
+            }
+        }
+
+
+        return view('backend.pages.edit',compact('pagedata','datatext',));
 
     }
 
@@ -162,9 +184,17 @@ class PageController extends Controller
     }
     public function findUserdetail($id){
 
-        $site = userSite::where('user',$id)->get()->first();
-        $data = Pages::where('siteID',$site->site)->get();
+
+        $data = Pages::where('siteID',$id)->get();
         return $data;
 
     }
+    public function upload(Request $request){
+        $fileName= $request->file('file')->getClientOriginalName();
+        $path= $request->file('file')->storeAs('pageimages',$fileName,'public');
+        return response()->json(['location'=>url("storage/$path")]);
+        // $imgpath = request()->file('file')->store('uploads','public');
+        // return response()->json(['location'=>"/storage/app/public/$imgpath"]);
+    }
+
 }

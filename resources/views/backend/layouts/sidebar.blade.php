@@ -12,8 +12,8 @@
         <ul class="nav">
           <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="material-icons">dashboard</i>
-              Language
+                <i class="fas fa-globe"></i>
+              Websites
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               @php
@@ -46,28 +46,32 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route ('slider.index')}}" >
-              <i class="material-icons">dashboard</i>
+                <i class="far fa-images"></i>
               Slider
             </a>
 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route ('brand.index')}}" >
-              <i class="material-icons">dashboard</i>
+                <i class="far fa-copyright"></i>
               Brands
             </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route ('posts.index')}}" >
-            <i class="material-icons">dashboard</i>
+              <i class="far fa-file-alt"></i>
             Posts
           </a>
-
+            <li class="nav-item">
+                <a class="nav-link" href="{{route ('pages.index')}}" >
+                    <i class="far fa-file-alt"></i>
+                    Pages
+                </a>
         </li>
           </li>
           <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="material-icons">dashboard</i>
+                <i class="fas fa-th"></i>
               Category
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -77,7 +81,7 @@
           </li>
           <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="material-icons">dashboard</i>
+                <i class="fas fa-shapes"></i>
               Attribute
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -85,16 +89,26 @@
               <a class="dropdown-item" href="{{route ('attribute.create')}}">Add Attribute</a>
             </div>
           </li>
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-shapes"></i>
+                    Variations
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{route ('variation.index')}}">Variations</a>
+                    <a class="dropdown-item" href="{{route ('variation.create')}}">Add Variations</a>
+                </div>
+            </li>
           <li class="nav-item  ">
             <a class="nav-link" href="{{route ('product.index')}}">
-              <i class="material-icons">dashboard</i>
-              <p>Product</p>
+                <i class="fab fa-product-hunt"></i>
+              <p>Products</p>
             </a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="material-icons">dashboard</i>
-              Locale
+                <i class="fas fa-cogs"></i>
+              Locales
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{route ('site.index')}}">Sites</a>
