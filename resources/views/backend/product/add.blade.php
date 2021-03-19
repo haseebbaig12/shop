@@ -111,12 +111,24 @@
       </div>
       <div class="col-md-3">
         <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="bmd-label-floating">Price</label>
+                    <input type="number" name="bprice"  class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="bmd-label-floating">Stock</label>
+                    <input type="number" name="stock"  class="form-control">
+                </div>
+            </div>
           <div class="col-md-12">
             <div class="form-group">
               {{-- <label class="bmd-label-floating">Language</label> --}}
               <select name="status" id=""  class="form-control">
-                <option class="dropdown-item">Status</option>
-                <option value="1" class="dropdown-item">Enabled</option>
+{{--                <option value="1" class="dropdown-item">Status</option>--}}
+                <option value="1" selected class="dropdown-item">Enabled</option>
                 <option value="0" class="dropdown-item">Disabled</option>
               </select>
             </div>

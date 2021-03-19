@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->integer('status');
             $table->string('meta_title')->nullable();
+            $table->string('bprice')->nullable();
+            $table->string('stock')->nullable();
             $table->string('feature_image')->nullable();
             $table->text('meta_description')->nullable();
             $table->unsignedInteger('user_id');
