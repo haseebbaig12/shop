@@ -3,11 +3,25 @@
   Edit Product - Cooutfits
 @endsection
 @section('content')
-<form action="{{url('products',$product->id)}}" method="POST" enctype="multipart/form-data" name="wowow">
+<form action="{{route('product.update',$product->id)}}" method="POST" enctype="multipart/form-data" name="wowow">
   @csrf
+    @method("PUT")
+    <input name="id" value="{{$product->id}}" type="hidden" class="form-control">
     <div class="row">
       <div class="col-md-3">
         <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="bmd-label-floating">Price</label>
+                    <input type="number" name="bprice" value="{{$product->bprice}}"  class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="bmd-label-floating">Stock</label>
+                    <input type="number" name="stock" value="{{$product->stock}}" class="form-control">
+                </div>
+            </div>
           <div class="col-md-12">
             <div class="form-group">
               {{-- <label class="bmd-label-floating">Language</label> --}}
@@ -57,6 +71,7 @@
           <div class="col-md-12">
             <button type="submit" class="btn btn-primary pull-left">Publish</button>
           </div>
+
             <div class="col-md-12">
                 <p>Please Upload Your Feature Image</p>
                 <img class="d-block" height="200px" width="200px" src="{{asset('backend/img/product')}}/{{$product->feature_image}}" alt="">
@@ -84,6 +99,7 @@
             <div class="card">
               <div class="card-header card-header-primary">
                 <h4 class="card-title">Edit Product</h4>
+
               </div>
               <div class="card-body">
                   <div class="row">
@@ -208,7 +224,7 @@
                                   <div class="form-group">
                                     <label class="bmd-label-floating">Price</label>
                                   <input type="text" name="price[]" value="{{$type['price']}}" class="form-control">
-                                      <input type="hidden" name="price[]" value="{{$type['id']}}" class="form-control">
+{{--                                      <input type="hidden" name="price[]" value="{{$type['id']}}" class="form-control">--}}
 
                                   </div>
                                 </div>

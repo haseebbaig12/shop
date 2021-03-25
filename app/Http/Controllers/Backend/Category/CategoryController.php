@@ -36,11 +36,19 @@ class CategoryController extends Controller
      */
     public function create()
     {
-//        $id = Auth::user()->parentID;
-        // below $language from language Model
+        $cat =array();
         $language = session()->get('language');
+        $category = Category::where('siteID',session()->get('site'))->where('p_id',0)->get();
+        foreach ($category as $catyy){
+            $languages = session()->get('language')->first();
+            $categorytxt = CategoryText::where('categoryID',$catyy->id)->where('language',$languages->id)->get()->first();
+            $cat[]=[
+                'id' => $catyy->id,
+                'name'=>$categorytxt->title,
+            ];
 
-        return view('backend/category/add',compact('language'));
+    }
+        return view('backend/category/add',compact('language','cat'));
     }
 
     public function store(Request $request)
@@ -55,6 +63,7 @@ class CategoryController extends Controller
         $data=[
             'code'=>$request->code,
             'status'=>$request->status,
+            'p_id' =>$request->p_id,
             'seo_title'=>$request->seo_title,
             'seo_desc'=>$request->seo_desc,
             'meta_key'=>$request->meta_key,
@@ -88,7 +97,15 @@ class CategoryController extends Controller
     {
         $categorydata = array();
         $language = session()->get('language');
-        $data=Category::where('id',$id)->where('userID',session()->get('id'))->where('siteID',session()->get('site'))->get()->first();
+        $data=Category::where('id',$id)->where('siteID',session()->get('site'))->get()->first();
+        $category = Category::where('siteID',session()->get('site'))->where('p_id',0)->get();
+        foreach ($category as $catyy){
+            $languages = session()->get('language')->first();
+            $categorytxt = CategoryText::where('categoryID',$catyy->id)->where('language',$languages->id)->get()->first();
+            $cat[]=[
+                'id' => $catyy->id,
+                'name'=>$categorytxt->title,
+            ];}
         foreach ($language as $lang){
             $cattext=CategoryText::where('language',$lang->id)->where('categoryID',$data->id)->get()->first();
             if($cattext != Null){
@@ -107,7 +124,7 @@ class CategoryController extends Controller
                 ];}
         }
         if(!empty($data)){
-            return view('backend.category.edit',compact('data','categorydata'));
+            return view('backend.category.edit',compact('data','categorydata','cat'));
         }else{
             return abort('404');
         }
@@ -129,6 +146,7 @@ class CategoryController extends Controller
             $data=[
                 'code'=>$request->code,
                 'status'=>$request->status,
+                'p_id' =>$request->p_id,
                 'seo_title'=>$request->seo_title,
                 'seo_desc'=>$request->seo_desc,
                 'meta_key'=>$request->meta_key,

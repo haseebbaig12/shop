@@ -2,10 +2,10 @@
     <div class="row m-0 py-3">
         <div class="col-3 d-flex px-5">
             <img class=" muzaa" src="{{asset('frontend/img/LOGO.PNG')}}" alt="">
- 
+
         </div>
         <div class="col-8 py-1">
-            
+
             <div class="muz=">
                 <span class="sp-1">COPYRIGHT 2021 ©KAF JIU JITSU.COM | ALL RIGHTS RESERVED </span>
                 <img class="face" src="{{asset('frontend/img/facebook-01.png')}}" alt="">
@@ -15,7 +15,7 @@
                <div class="e3w"></div>
            </div>
         </div>
-      
+
     </div>
 
 
@@ -31,6 +31,10 @@ crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+crossorigin="anonymous"></script>
+
 
 
 
@@ -58,7 +62,7 @@ crossorigin="anonymous"></script>
     <!-- Theme Base, Components and Settings -->
     <script src="{{asset('frontend/js/theme.js')}}"></script>
 
-    
+
 
     <!-- Current Page Vendor and Views -->
     <script src="{{asset('frontend/js/views/view.shop.js')}}"></script>
@@ -69,7 +73,7 @@ crossorigin="anonymous"></script>
     <script src="{{asset('frontend/js/theme.init.js')}}"></script>
 
     <!-- Examples -->
-    <script src="{{asset('frontend/js/examples/examples.gallery.js')}}"></script>	
+    <script src="{{asset('frontend/js/examples/examples.gallery.js')}}"></script>
 <script>
     // Add active class to the current button (highlight it)
     var header = document.getElementById("myDIV");

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Providers;
+use App\Models\Pages;
+use App\Models\PagesText;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $menuItems = Pages::where('status',1)->get();
+        view()->share('menuItems', $menuItems);
+
     }
 }
