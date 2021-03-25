@@ -42,9 +42,14 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $site_id= userSite::where('site',session()->get('site'))->get()->first();
-        $image = $request->file('image');
-        $imageName = rand(1000,1000000).'.'.$image->getClientOriginalExtension();
-        $image->move(public_path('backend/img/pagesimages'),$imageName);
+        if(!empty($request->file('image'))){
+            $image = $request->file('image');
+            $imageName = rand(1000,1000000).'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('backend/img/pagesimages'),$imageName);
+        }else {
+            $imageName ='';
+        }
+
         $basic =[
             'url'=>$request->url,
             'code'=>$request->code,
@@ -117,10 +122,10 @@ class PageController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user = Auth::user()->id;
-        $site_id= userSite::where('user',$user)->get()->first();
-        $updatepages = Pages::where('id',$id)->where('userID',$user)->get()->first();
 
+        $site = session()->get('site');
+        $updatepages = Pages::where('id',$id)->where('siteID',$site)->get()->first();
+//    dd($updatepages);
         if(!empty($request->file('image'))){
             $image = $request->file('image');
             $imageName = rand(1000,1000000).'.'.$image->getClientOriginalExtension();
@@ -135,8 +140,8 @@ class PageController extends Controller
             'meta_desc'=> $request->meta_desc,
             'status'=>$request->status,
             'image'=>$imageName,
-            'userID'=>$user,
-            'siteID'=>$site_id->site
+            'userID'=>session()->get('id'),
+            'siteID'=>$site
         ];
         $updatepages->update($basic);
 
@@ -191,10 +196,23 @@ class PageController extends Controller
     }
     public function upload(Request $request){
         $fileName= $request->file('file')->getClientOriginalName();
-        $path= $request->file('file')->storeAs('pageimages',$fileName,'public');
+        $path= $request->file('file')->storeAs('pageimages',$fileName,'l');
         return response()->json(['location'=>url("storage/$path")]);
         // $imgpath = request()->file('file')->store('uploads','public');
         // return response()->json(['location'=>"/storage/app/public/$imgpath"]);
+    }
+    public function pagedetails($slug){
+        $pagedetails = array();
+        $page = Pages::where('url',$slug)->get()->first();
+        $pagetext = PagesText::where('PagesID',$page->id)->get()->first();
+        $pagedetails[]=[
+            'id'=>$page->id,
+            'image'=>$page->image,
+            'title'=>$pagetext->title,
+            'text'=>$pagetext->page_text,
+            'pagedate'=>$page->created_at
+        ];
+        return view('frontend/page/page',compact('pagedetails'));
     }
 
 }

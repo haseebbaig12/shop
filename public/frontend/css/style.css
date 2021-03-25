@@ -22,7 +22,7 @@ h2.eed {
 /*    width: 54%;*/
 /*    font-family: cursive;*/
 /*}*/
-=======
+
 
  .parend{
 
@@ -205,7 +205,7 @@ nav.navbar.navbar-expand-lg {
      width: 62%;
  }
  .main-0 {
-     height: 82pxbg
+     height: 82px;
  }
  span.sp-1 {
      margin: 0px 35px;
@@ -376,7 +376,7 @@ footer.footer {
     background-color: black;
     color: white;
     /* height: 72px; */
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0;
     width: 100%;
 }

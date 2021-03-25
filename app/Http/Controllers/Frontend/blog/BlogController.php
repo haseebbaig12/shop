@@ -6,7 +6,7 @@ use App\Models\Post_Text;
 use App\Models\Posts;
 use App\Models\Blog;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class BlogController extends Controller
 {
     /**
@@ -108,5 +108,24 @@ class BlogController extends Controller
         // dd($postdetail);
         return view('frontend.blog.singlepost',compact('postdetail','post'));
     }
+    public function test(){
 
+        return view('test');
+    }
+    public function test1(Request $request){
+
+
+        dd($request['indexs'],$request['positions']);
+//        foreach ($request['indexs'] as $key=>$value){
+//            dd($value);
+//        }
+//        if (isset($_POST['indexs'])){
+//            foreach ($_POST['indexs'] as $id){
+//                $index = $id;
+//                dd($index);
+//                $cat = DB::table('categories')->where('id',$request['index'] )->update('order_id',$request['Positions']);
+            }
+//            exit('success');
+//        }
+//    }
 }

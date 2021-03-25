@@ -47,7 +47,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{url('/')}}">
                 <div class="eed"></div>
                 <div class="row">
 {{--
@@ -73,24 +73,29 @@
         </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto">
-                    <li class="nav-item  active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item btn ">
+                        <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Class Schedule </a>
-                    </li>
-                    <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Subscribe Now </a>
-                    </li>
-                    </li>
-                    <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Academy page </a>
-                    </li>
-                    <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                     <li class="nav-item active btn">
-                        <a class="nav-link" href="#">language</a>
+{{--                    @foreach($pagesmenu as $menu)--}}
+{{--                    <li class="nav-item active btn">--}}
+{{--                        <a class="nav-link" href="{{ $menu['pageSlug'] }}">{{$menu['pageTitle']}} </a>--}}
+{{--                    </li>--}}
+{{--                    @endforeach--}}
+
+{{--                    <li class="nav-item active btn">--}}
+{{--                        <a class="nav-link" href="#">Subscribe Now </a>--}}
+{{--                    </li>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item active btn">--}}
+{{--                        <a class="nav-link" href="#">Academy page </a>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item active btn">--}}
+{{--                        <a class="nav-link" href="#">Contact Us</a>--}}
+{{--                    </li>--}}
+                    @foreach( $menuItems as $menus)
+                     <li class="nav-item btn">
+                        <a class="nav-link" href={{ url('/page/'.$menus->url) }}>{{$menus->meta_title}}</a>
+                         @endforeach
                        {{-- @php
                           $language= DB::table('languages')->where('status',1)->get();
                         @endphp
@@ -105,7 +110,7 @@
                         @endforeach--}}
                     </li>
                 </ul>
-                <a href="{{url('/login')}}"><button type="button" class="btn btn-light mx-3">login</button></a>>
+                <a href="{{url('/login')}}"><button type="button" class="btn btn-light mx-3">login</button></a>
                 <div class="row">
                     <div class="col-8 d-flex p-0">
                         <img class="face-1" src="{{asset('frontend/img/facebook-01.png')}}" alt="">

@@ -21,13 +21,15 @@ class CreateCategoriesTable extends Migration
             $table->string('seo_desc')->nullable();
             $table->string('meta_key')->nullable();
             $table->integer('status');
+            $table->integer('p_id')->nullable();
+            $table->integer('order_id')->nullable();
             $table->unsignedInteger('userID');
             $table->unsignedInteger('siteID');
             $table->foreign('userID')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('siteID')->references('id')->on('sites')->onDelete('cascade');
             $table->timestamps();
         });
-    
+
     }
 
     /**
