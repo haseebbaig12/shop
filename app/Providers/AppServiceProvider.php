@@ -25,14 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        $menuItems = Pages::where('status',1)->get();
-        // if($menuItems != Null){
-            
-            view()->share('menuItems', $menuItems);
-        // }
-        // return redirect('/');
-
-     
-}
+        $menuItems = Pages::where('status',1)->get();         
+        view()->share('menuItems', $menuItems);
+    }
 }
