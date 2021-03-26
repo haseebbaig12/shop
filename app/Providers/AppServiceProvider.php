@@ -27,11 +27,11 @@ class AppServiceProvider extends ServiceProvider
     {
 
         $menuItems = Pages::where('status',1)->get();
-        if($menuItems != Null){
+        // if($menuItems != Null){
             
             view()->share('menuItems', $menuItems);
-        }
-        return redirect('/');
+        // }
+        // return redirect('/');
 
      
 }

@@ -76,6 +76,9 @@
                     <li class="nav-item btn ">
                         <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item btn ">
+                        <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+                    </li>
 {{--                    @foreach($pagesmenu as $menu)--}}
 {{--                    <li class="nav-item active btn">--}}
 {{--                        <a class="nav-link" href="{{ $menu['pageSlug'] }}">{{$menu['pageTitle']}} </a>--}}
