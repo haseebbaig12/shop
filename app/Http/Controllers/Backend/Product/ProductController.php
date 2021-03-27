@@ -15,6 +15,7 @@ use App\Models\Language;
 use App\Models\userSite;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Null_;
+
 class ProductController extends Controller
 {
     /**
@@ -43,14 +44,15 @@ class ProductController extends Controller
      */
     public function create()
     {
-//        $id = Auth::user()->parentID;
-//        $admin = Auth::user()->id;
+
+
         // below $language from language Model
         $language = session()->get('language');
-//        $site_id= userSite::where('user',$admin)->get()->first();
+
         $attribute= Attribute::where('userID',session()->get('id'))->where('siteID',session()->get('site'))->get();
         $variation= Variation::where('userID',session()->get('id'))->where('siteID',session()->get('site'))->get();
         $category= Category::where('userID',session()->get('id'))->where('siteID',session()->get('site'))->where('status',1)->get();
+
         return view('backend/product/add',compact('language','attribute','variation','category'));
     }
 
@@ -63,26 +65,36 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
+//         dd($request);
+//         $id = session()->get('id');
+//         $site_id= userSite::where('user',$id)->get()->first(); 
+
+
         $id = session()->get('id');
         $site_id= session()->get('site');
+
         if($request->feature_image){
             $fimage = $request->file('feature_image');
             $featureimage = rand(10000,100000000) . '.' . $fimage->getClientOriginalExtension();
             $fimage->move(public_path('backend/img/product/'), $featureimage);
-        }else{
+
+    }else{
             $featureimage= 'Null';
         }
         $basic=[
-            'bprice'=>$request->bprice,
-            'stock'=>$request->stock,
+//             'bprice'=>$request->bprice,
+         
             'slug'=>$request->slug,
             'status'=>$request->status,
             'meta_title'=>$request->meta_title,
             'meta_description'=>$request->meta_description,
-            'site_id'=>$site_id,
+//             'site_id'=>$site_id->site,
+          'site_id'=>$site_id,
             'user_id'=>$id,
             'feature_image'=>$featureimage,
-        ];
+            'price'=>$request->pprice,
+            'stock'=>$request->stock,
+          ];
         $productcreate =Product::create($basic);
         $product_id= $productcreate->id;
         $product_cat = array();
@@ -161,6 +173,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $data = array();
+
         $language = session()->get('language');
         $product = Product::where('id',$id)->where('site_id',session()->get('site'))->get()->first();
         $category = Category::where('siteID',session()->get('site'))->get();
@@ -169,8 +182,7 @@ class ProductController extends Controller
         $attribute= Attribute::where('siteID',session()->get('site'))->get();
         $variation= Variation::where('siteID',session()->get('site'))->get();
         $product_type= ProductType::where('product_id',$id)->get();
-
-        foreach($language as $lang){
+foreach($language as $lang){
             $product_text = ProductText::where('language',$lang->id)->where('product_id',$id)->get()->first();
             $category = Category::where('siteID',session()->get('site'))->get();
             if($product_text!=Null ){
@@ -182,6 +194,7 @@ class ProductController extends Controller
                     'short_description'  => $product_text['short_description'],
                 ];
             }
+
 
             elseif($product_text == Null){
                 $data[]=[
@@ -200,8 +213,10 @@ class ProductController extends Controller
 
     public function update(Request $request)
     {
+
       $id=  $request->id;
     $product= Product::where('id',$id)->where('site_id',session()->get('site'))->get()->first();
+
         if($request->feature_image){
             $fimage = $request->file('feature_image');
             $featureimage = rand(10000,100000000) . '.' . $fimage->getClientOriginalExtension();
@@ -209,16 +224,29 @@ class ProductController extends Controller
         }else{
             $featureimage = $product->feature_image;
         }
-    $basic=[
-        'bprice'=>$request->bprice,
-        'stock'=>$request->stock,
-        'slug'=>$request->slug,
-        'status'=>$request->status,
-        'meta_title'=>$request->meta_title,
-        'meta_description'=>$request->meta_description,
-        'feature_image'=>$featureimage,
-    ];
-    $productupdate = $product->update($basic);
+
+        $basic=[
+            'slug'=>$request->slug,
+            'status'=>$request->status,
+            'meta_title'=>$request->meta_title,
+            'meta_description'=>$request->meta_description,
+            'feature_image'=>$featureimage,
+            'price'=>$request->pprice,
+            'stock'=>$request->stock,
+        ];
+        $productupdate = $product->update($basic);
+
+//     $basic=[
+//         'bprice'=>$request->bprice,
+//         'stock'=>$request->stock,
+//         'slug'=>$request->slug,
+//         'status'=>$request->status,
+//         'meta_title'=>$request->meta_title,
+//         'meta_description'=>$request->meta_description,
+//         'feature_image'=>$featureimage,
+//     ];
+//     $productupdate = $product->update($basic);
+
         $language =$request->language;
         $x=0;
         foreach($language as $lang){
@@ -245,9 +273,11 @@ class ProductController extends Controller
                 ];
                 ProductText::create($emptydata);
             }
-            $x++;
+         $x++;
+
         }
-        $product_var = array();
+
+   $product_var = array();
             $x=0;
           foreach($request['variation'] as $vari){
             $type = ProductType::where('product_id',$request['id'])->where('variation',$vari)->get()->first();
@@ -260,15 +290,12 @@ class ProductController extends Controller
 
                 $product_var = array(
                     "product_id"=>$request['id'],
-                    "variation" =>$request['variation'][$x],
+                     "variation" =>$request['variation'][$x],
                     "attribute" => $request['attribute'][$x],
                     "price" => $request['price'][$x],
                 );
-
-                ProductType::create($product_var);
-
-
-            }
+ProductType::create($product_var);
+}
             elseif($type != Null) {
 
                 $product_var = array(
@@ -289,7 +316,7 @@ class ProductController extends Controller
             $image = $request->file('image')[$key];
 
             $filenameimage[$key] = rand(1000, 100000000) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('backend/img/product/'), $filenameimage[$key]);
+           $image->move(public_path('backend/img/product/'), $filenameimage[$key]);
             $imagess = array(
                 "image" => $filenameimage[$key],
             );

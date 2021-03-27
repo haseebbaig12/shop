@@ -3,6 +3,11 @@ body{
     padding: 0px 0px;
 
  }
+
+.body {
+    min-height: 72.7vh !important;
+}
+
  @font-face {
      font-family:EurostileBold;
      src: url(../font/eurostile/EurostileBold.ttf);
@@ -18,6 +23,12 @@ h2.eed {
     font-size: 31px;
     font-family: 'EurostileBold';
 }
+
+
+ .parend{
+
+     background-image: url(../img/martial-arts-hero-section-bg1.jpg) !important;
+
 /*p.rrf {*/
 /*    width: 54%;*/
 /*    font-family: cursive;*/
@@ -27,6 +38,7 @@ h2.eed {
  .parend{
 
      background-image: url(../img/martial-arts-hero-section-bg1.jpg);
+
      background-size: cover;
      background-repeat: no-repeat;
      width: 100%;
@@ -377,8 +389,11 @@ footer.footer {
     color: white;
     /* height: 72px; */
     /*position: absolute;*/
+
+
     bottom: 0;
     width: 100%;
+
 }
  .active,.btn:hover {
      border-bottom:1px solid white ;

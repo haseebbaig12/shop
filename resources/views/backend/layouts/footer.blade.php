@@ -1,43 +1,57 @@
-
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
+<script>
+  jQuery(document).ready( function () {
+  jQuery('#myTable').DataTable()
+      
+  }
+  );
+</script>
+    <!-- Footer -->
+      {{-- <footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6">
+            <div class="copyright text-center  text-lg-left  text-muted">
+              &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
               </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
               </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
+              <li class="nav-item">
+                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
               </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
+              <li class="nav-item">
+                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
               </li>
             </ul>
-          </nav>
-          <div class="copyright float-right" id="date">
-            , made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
           </div>
         </div>
-      </footer>
-      <script>
-        const x = new Date().getFullYear();
-        let date = document.getElementById('date');
-        date.innerHTML = '&copy; ' + x + date.innerHTML;
-      </script>
+      </footer> --}}
     </div>
   </div>
+
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  
+
+
+  {{-- <script src="{{asset('backend/vendor/jquery/dist/jquery.min.js')}}"></script> --}}
+  {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>   --}}
+  <script src="{{asset('backend/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('backend/vendor/js-cookie/js.cookie.js')}}"></script>
+  <script src="{{asset('backend/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
+  <script src="{{asset('backend/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
+  <!-- Optional JS -->
+  <script src="{{asset('backend/vendor/chart.js/dist/Chart.min.js')}}"></script>
+  <script src="{{asset('backend/vendor/chart.js/dist/Chart.extension.js')}}"></script>
+  <!-- Argon JS -->
+  <script src="{{asset('backend/js/argon.js?v=1.2.0')}}"></script>
+  
+=======
   <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
       <a href="#" data-toggle="dropdown">
@@ -375,5 +389,7 @@
               });
           });
       </script>
+
 </body>
+
 </html>

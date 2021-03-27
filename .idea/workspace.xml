@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:Naveed" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f649de5-8340-4496-a9eb-eb2c911d5c13" name="Default Changelist" comment="Commit By Naveed Ullah">
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/Capture-2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/Capture-3.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/Capture.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/admin-banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/arrows-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/article-0-19DA9E2800000578-113_634x471.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/background-img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/bg-corporate-1-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/bg-corporate-14-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/bg-corporate-20-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/bg-corporate-20-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/bg-corporate-20-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/bg-corporate-20-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/bg-hotspots.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/bg-one-page-1-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/bg-portfolio-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blank.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-ad-1-large.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-ad-1-medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-ad-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-ad-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-corporate-3-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-corporate-3-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-corporate-3-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-corporate-3-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-corporate-9-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-corporate-9-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-corporate-9-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-hosting-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-hosting-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/blog-hosting-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-47.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-52.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-54.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-64.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-65.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-66.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/large/blog-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-34.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-35.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-36.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-37.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-38.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-39.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-41.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-42.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-43.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-44.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-45.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-46.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-47.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-48.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-49.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-50.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-51.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-52.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-53.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-54.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-55.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-56.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-57.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-58.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-59.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-60.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-61.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-62.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-64.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-65.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-66.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-67.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-68.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-69.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-70.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/blog/wide/blog-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/curved-border.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/custom-divider-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/custom-header-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/custom-header-bw-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/custom-header.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/desktop-device-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/device.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/dotted-line-angle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/facebook-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/flags.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/instagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/johnathan-kaufman-sAN6T4VuamQ-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/layout-styles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/lazy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/left-section-image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-big.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-13-small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-corporate-9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-default-slim-dark-small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-default-slim-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-default-slim-small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-default-slim.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-flat-light-small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-flat-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-flat-small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-flat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-footer-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-footer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-stick-change-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-stick-change-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo-symbol-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/marc-kleen-_EpsyUkMQR4-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/martial-arts-hero-section-bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/martial-arts-hero-section-bg2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/martial-arts-hero-section-bgabout-us.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/overlay-dot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/payment-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/pencil-blue-line-2-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/pencil-blue-line-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/pencil-blue-line-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/pencil-blue-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/pin-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/pin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/porto-admin-preview-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/porto-icon-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/right-section-image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/smartphone-corporate-14-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/smartphone-corporate-14-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/smartphone-corporate-14-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/style-switcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/vimeo-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/img/youtube-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Product/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Product/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/Home/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Language.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/product/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1pZKnyPV4AhiAOXHYUunof54txb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f649de5-8340-4496-a9eb-eb2c911d5c13" name="Default Changelist" comment="" />
+      <created>1615385343296</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615385343296</updated>
+      <workItem from="1615385367176" duration="2102000" />
+    </task>
+    <task id="LOCAL-00001" summary="Commit By Naveed Ullah">
+      <created>1615385786541</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615385786541</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commit By Naveed Ullah">
+      <created>1615390887970</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615390887970</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Naveed" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit By Naveed" />
+    <MESSAGE value="Commit By Naveed Ullah" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit By Naveed Ullah" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1615391031431">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1615391031431" />
+    <state x="275" y="83" key="Vcs.Push.Dialog.v2" timestamp="1615385795975">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="83" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1615385795975" />
+    <state x="543" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1615390826281">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="543" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728@0.0.1366.728" timestamp="1615390826281" />
+  </component>
+</project>
