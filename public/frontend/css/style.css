@@ -356,8 +356,9 @@ footer.footer {
     background-color: black;
     color: white;
     /* height: 72px; */
-    position: absolute;
+    position: relative;
     bottom: 0;
+    /*top: 0px;*/
     width: 100%;
 }
  .active,.btn:hover {
