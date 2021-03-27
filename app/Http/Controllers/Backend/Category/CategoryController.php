@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->user=new Language;
-        // dd($this->user);
+
     }
     /**
      * Display a listing of the resource.
@@ -36,19 +36,21 @@ class CategoryController extends Controller
      */
     public function create()
     {
-//        $id = Auth::user()->parentID;
-        // below $language from language Model
+        $cat =array();
         $language = session()->get('language');
+        $category = Category::where('siteID',session()->get('site'))->where('p_id',0)->get();
+        foreach ($category as $catyy){
+            $languages = session()->get('language')->first();
+            $categorytxt = CategoryText::where('categoryID',$catyy->id)->where('language',$languages->id)->get()->first();
+            $cat[]=[
+                'id' => $catyy->id,
+                'name'=>$categorytxt->title,
+            ];
 
-        return view('backend/category/add',compact('language'));
+    }
+        return view('backend/category/add',compact('language','cat'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
 
@@ -61,6 +63,7 @@ class CategoryController extends Controller
         $data=[
             'code'=>$request->code,
             'status'=>$request->status,
+            'p_id' =>$request->p_id,
             'seo_title'=>$request->seo_title,
             'seo_desc'=>$request->seo_desc,
             'meta_key'=>$request->meta_key,
@@ -68,115 +71,128 @@ class CategoryController extends Controller
             'siteID'=>$site_id->site,
             'userID'=>$id,
         ];
-       $category = Category::create($data);
-       $category_id = $category->id;
-    //    dd($category_id);
+        $category = Category::create($data);
+        $category_id = $category->id;
+        //    dd($category_id);
 
-       $text = array();
-       for ($x = 0; $x < sizeof($request['language']); $x++) {
-           // dd($request['name']);
-        //    dd($request['short_description'][$x]);
-           $text = array(
-               "categoryID" => $category_id,
-               "title" =>$request['name'][$x],
-               "short_description" =>$request['short_description'][$x],
-               "language" => $request['language'][$x],
-               );
-               CategoryText::create($text);
-       }
-       return redirect('category');
+        $text = array();
+        for ($x = 0; $x < sizeof($request['language']); $x++) {
+            $text = array(
+                "categoryID" => $category_id,
+                "title" =>$request['name'][$x],
+                "short_description" =>$request['short_description'][$x],
+                "language" => $request['language'][$x],
+            );
+            CategoryText::create($text);
+        }
+        return redirect('category');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function show(Category $category)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-
-        $user = Auth::user()->parentID;
-        $admin = Auth::user()->id;
-        // below $language from language Model
-        $language = $this->user->language($user);
-        $site_id= userSite::where('user',$admin)->get()->first();
-        $data=Category::where('id',$id)->where('userID',$admin)->where('siteID',$site_id->site)->get()->first();
-
+        $categorydata = array();
+        $language = session()->get('language');
+        $data=Category::where('id',$id)->where('siteID',session()->get('site'))->get()->first();
+        $category = Category::where('siteID',session()->get('site'))->where('p_id',0)->get();
+        foreach ($category as $catyy){
+            $languages = session()->get('language')->first();
+            $categorytxt = CategoryText::where('categoryID',$catyy->id)->where('language',$languages->id)->get()->first();
+            $cat[]=[
+                'id' => $catyy->id,
+                'name'=>$categorytxt->title,
+            ];}
+        foreach ($language as $lang){
+            $cattext=CategoryText::where('language',$lang->id)->where('categoryID',$data->id)->get()->first();
+            if($cattext != Null){
+                $categorydata[]=[
+                    'languageid'=> $lang->id,
+                    'languagename'=> $lang->name,
+                    'title'=>$cattext->title,
+                    'short_description'=>$cattext->short_description
+                ];}
+            if($cattext == null){
+                $categorydata[]=[
+                    'languageid'=> $lang->id,
+                    'languagename'=> $lang->name,
+                    'title'=>'',
+                    'short_description'=>'',
+                ];}
+        }
         if(!empty($data)){
-            return view('backend.attribute.edit',compact('data','site_id','language'));
+            return view('backend.category.edit',compact('data','categorydata','cat'));
         }else{
             return abort('404');
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request,$id)
     {
-        $user = Auth::user()->id;
-        $site_id= userSite::where('user',$user)->get()->first();
-        $category=Category::where('id',$id)->where('userID',$user)->where('siteID',$site_id->site)->get()->first();
+        $language = session()->get('language');
+        $category=Category::where('id',$id)->where('userID',session()->get('id'))->where('siteID',session()->get('site'))->get()->first();
 
         $main = $request->file('image');
         if($main != null){
-        $filenamemain = rand(1000,100000000) . '.' . $main->getClientOriginalExtension();
-        $main->move(public_path('backend/img/category/'), $filenamemain);
+            $filenamemain = rand(1000,100000000) . '.' . $main->getClientOriginalExtension();
+            $main->move(public_path('backend/img/category/'), $filenamemain);
         }else{
             $filenamemain= $category->image;
         }
         if(!empty($category)){
-        $data=[
-            'code'=>$request->code,
-            'status'=>$request->status,
-            'seo_title'=>$request->seo_title,
-            'seo_desc'=>$request->seo_desc,
-            'meta_key'=>$request->meta_key,
-            'image'=>$filenamemain,
-        ];
+            $data=[
+                'code'=>$request->code,
+                'status'=>$request->status,
+                'p_id' =>$request->p_id,
+                'seo_title'=>$request->seo_title,
+                'seo_desc'=>$request->seo_desc,
+                'meta_key'=>$request->meta_key,
+                'image'=>$filenamemain,
+            ];
+            $category->update($data);
+            $catid = $category->id;
 
-       $category->update($data);
-    //    dd($category);
-       $text = array();
-       for ($x = 0; $x < sizeof($request['name']); $x++) {
+            $x=0;
+            foreach ($language as $lang){
+                $cattext=CategoryText::where('language',$lang->id)->where('categoryID',$catid)->get()->first();
+                if($cattext != null) {
+                    $Text = array();
+                    if ($x == sizeof($request['name'])) {
+                        $x = $x - 1;
+                    }
+                    $Text = [
+                        "categoryID" => $catid,
+                        "title" => $request['name'][$x],
+                        "short_description" => $request['short_description'][$x],
+                        "language" => $request['language'][$x],
+                    ];
+                    $cattext->update($Text);
 
-           $text = array(
-               "title" =>$request['name'][$x],
+                }elseif($cattext==Null){
 
-               "short_description" =>$request['short_description'][$x],
-               );
-               $categorytext = CategoryText::where('categoryID',$id)->where('language',$request['language'][$x])->get()->first();
 
-               $categorytext->update($text);
-       }
+                    $Text=[
+                        "categoryID" => $catid,
+                        "title" => $request['name'][$x],
+                        "short_description" => $request['short_description'][$x],
+                        "language" => $request['language'][$x],
+                    ];
+                    CategoryText::create($Text);
+                }
+                $x++;
+
+            }
+
             return redirect('category');
         }else{
             return abort('404');
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         $user = Auth::user()->id;
@@ -184,7 +200,7 @@ class CategoryController extends Controller
         $data=Category::where('id',$id)->where('userID',$user)->where('siteID',$site_id->site)->get()->first();
         if(!empty($data)){
             $data->delete();
-        return redirect('category');
+            return redirect('category');
         }else{
             return abort('404');
         }

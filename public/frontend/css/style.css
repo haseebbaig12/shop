@@ -9,6 +9,21 @@ body{
 
  }
 
+img.ees {
+    height: 160px;
+    margin: 0px 5pc;
+}
+h2.eed {
+    margin: 0px 0px;
+    font-size: 31px;
+    font-family: 'EurostileBold';
+}
+/*p.rrf {*/
+/*    width: 54%;*/
+/*    font-family: cursive;*/
+/*}*/
+
+
  .parend{
 
      background-image: url(../img/martial-arts-hero-section-bg1.jpg);
@@ -190,7 +205,7 @@ nav.navbar.navbar-expand-lg {
      width: 62%;
  }
  .main-0 {
-     height: 82pxbg
+     height: 82px;
  }
  span.sp-1 {
      margin: 0px 35px;
@@ -261,8 +276,13 @@ nav.navbar.navbar-expand-lg {
      width: 4rem;
      transform: translateY(-1rem);
      height: 60px;
-     width: 25%;
-     margin: 23px auto;
+
+     width: 18%;
+     margin: 12px auto;
+
+/*      width: 25%;
+     margin: 23px auto; */
+
 
  }
 
@@ -356,9 +376,8 @@ footer.footer {
     background-color: black;
     color: white;
     /* height: 72px; */
-    position: relative;
+    /*position: absolute;*/
     bottom: 0;
-    /*top: 0px;*/
     width: 100%;
 }
  .active,.btn:hover {
@@ -564,6 +583,7 @@ footer.footer {
          z-index: 99;
          width: 1377px;
      }
+
   }
 
 

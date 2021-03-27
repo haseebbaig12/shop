@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
+class CreateVariationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,19 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('variations', function (Blueprint $table) {
             $table->increments('id')->unsigned();
+            $table->unsignedInteger('attributeID');
             $table->string('code');
-            $table->string('image')->nullable();
-            $table->string('seo_title')->nullable();
-            $table->string('seo_desc')->nullable();
-            $table->string('meta_key')->nullable();
-            $table->integer('status');
-            $table->integer('p_id')->nullable();
-            $table->integer('order_id')->nullable();
+            $table->string('name');
+            $table->unsignedInteger('status');
             $table->unsignedInteger('userID');
             $table->unsignedInteger('siteID');
+            $table->foreign('attributeID')->references('id')->on('attributes')->onDelete('cascade');
             $table->foreign('userID')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('siteID')->references('id')->on('sites')->onDelete('cascade');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -39,6 +35,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('variations');
     }
 }

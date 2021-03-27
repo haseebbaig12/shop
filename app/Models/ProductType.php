@@ -3,14 +3,16 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductImage extends Model
+class ProductType extends Model
 {
-    protected $table = 'product_images';
+    protected $table = 'product_types';
     protected $fillable = [
         'id',
         'product_id',
-        'image',
-        'image_id',
+        'ide',
+        'variation',
+        'price',
+        'attribute',
 
     ];
 }

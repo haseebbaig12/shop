@@ -12,10 +12,15 @@ class Category extends Model
         'code',
         'image',
         'status',
+        'p_id',
         'seo_title',
         'seo_desc',
         'meta_key',
         'userID',
         'siteID',
     ];
+
+//    public  function chiled(){
+//        return  $this->hasMany('App\Models\Category','p_id');
+//    }
 }

@@ -1,6 +1,6 @@
 @extends('backend/layouts/master')
 @section('title')
-Category - Cooutfits 
+Category - Cooutfits
 @endsection
 @section('content')
 <div class="row">
@@ -29,14 +29,14 @@ Category - Cooutfits
                 @foreach($category as $categories)
                 <tr>
                     <td>1</td>
-                    <td>     
-                      <a href="{{route('category.edit',$categories->id)}}">                   
+                    <td>
+                      <a href="{{route('category.edit',$categories->id)}}">
                       <img class="d-block" height="60px" width="60px" src="{{asset('backend/img/category')}}/{{$categories->image}}" alt="">
                       </a>
                     </td>
                     <td>
-                    <a href="{{route('category.edit',$categories->id)}}">  
-                    {{$categories->name}}</td>
+                    <a href="{{route('category.edit',$categories->id)}}">
+                    {{$categories->seo_title}}</td>
                     </a>
                     <td>{{$categories->code}}</td>
                     <td>

@@ -45,7 +45,6 @@ $indexdata[]=array(
         $user = Auth::user()->id;
         $site = usersite::where('user',$user)->get()->first();
         $lang = Language::where('site_id',$site->id)->get();
-        // dd($lang);
         $cat = Category::where('siteID',$site->id)->where('userID',$user)->get();
         return view('backend/posts/add',compact('lang','cat'));
     }
@@ -130,12 +129,12 @@ $indexdata[]=array(
             }
 
         }
-
         return view('backend.posts.edit',compact('data','datatext','lang','cat'));
     }
 
     public function update(Request $request, $id)
     {
+
         $user = Auth::user()->id;
         $site_id= usersite::where('user',$user)->get()->first();
         $updatepost = Posts::where('id',$id)->where('userID',$user)->get()->first();
@@ -184,7 +183,7 @@ elseif($textupdate==Null){
                          "title" => $request['title'][$x],
                          "short_desc"  => $request['short_desc'][$x],
                          "post_text"  => $request['post_text'][$x],
-                         "languageID" => $request['name'][$x]
+                         "languageID" => $request['language'][$x]
                            ];
                            Post_Text::create($emptydata);
                 }
@@ -215,7 +214,7 @@ elseif($textupdate==Null){
     }
     public function upload(Request $request){
         $fileName= $request->file('file')->getClientOriginalName();
-        $path= $request->file('file')->storeAs('uploads',$fileName,'public');
+        $path= $request->file('file')->storeAs('postimages',$fileName,'public');
         return response()->json(['location'=>url("storage/$path")]);
         // $imgpath = request()->file('file')->store('uploads','public');
         // return response()->json(['location'=>"/storage/app/public/$imgpath"]);

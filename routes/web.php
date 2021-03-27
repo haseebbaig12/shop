@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\Slider\SliderController;
 use App\Http\Controllers\Backend\Category\CategoryController;
 use App\Http\Controllers\Backend\Product\ProductController;
 use App\Http\Controllers\Backend\Attribute\AttributeController;
+use App\Http\Controllers\Backend\Variation\VariationController;
 use App\Http\Controllers\Backend\Local\SiteController;
 use App\Http\Controllers\Backend\Language\LanguageChangeController;
 use App\Http\Controllers\Backend\Language\LanguageController;
@@ -20,7 +21,10 @@ use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\LanguageSwitcher;
 use App\Http\Controllers\Backend\Post\PostsController;
+use App\Http\Controllers\Backend\page\PageController;
 use App\Http\Controllers\Frontend\blog\BlogController;
+use App\Http\Controllers\Backend\page\PagesmenuController;
+
 
 use App\Http\Controllers\Frontend\HomeController as frontend;
 
@@ -55,7 +59,7 @@ Route::middleware(['auth','site','usersite'])->group(function () {
     Route::resource('/category', CategoryController::class);
     Route::resource('/product', ProductController::class);
     Route::resource('/attribute', AttributeController::class);
-    Route::post('/products/{id}', [ProductController::class,'update']);
+//    Route::post('/products/{id}', [ProductController::class,'update']);
     Route::resource('/site', SiteController::class);
     Route::resource('/lang', LanguageChangeController::class);
     Route::resource('/language', LanguageController::class);
@@ -65,9 +69,13 @@ Route::middleware(['auth','site','usersite'])->group(function () {
     Route::post('demo/{id}', [CategoryController::class,'update']);
     Route::resource('/posts', PostsController::class);
     Route::post('/upload', [PostsController::class,'upload']);
+    Route::resource('/pages', PageController::class);
+
+    Route::post('/upload', [PageController::class,'upload']);
+    Route::resource('/variation', VariationController::class);
 });
 require __DIR__.'/auth.php';
-
+Route::get('/page/{slug}', [PageController::class,'pagedetails']);
 
 Route::resource('/shop', Product::class);
 Route::resource('/single-product', SingleProductController::class);
@@ -77,3 +85,5 @@ Route::resource('/cart', CartController::class);
 Route::resource('/checkout', CheckoutController::class);
 Route::resource('/blog',BlogController::class);
 Route::get('/post/{slug}', [BlogController::class,'singlepost']);
+Route::get('/test1' , [BlogController::class,'test'] );
+Route::post('/test' , [BlogController::class,'test1'] );

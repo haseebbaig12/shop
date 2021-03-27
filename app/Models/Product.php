@@ -8,10 +8,15 @@ class Product extends Model
 {
     protected $table = 'product_basic';
     protected $fillable = [
+        'bprice',
+        'stock',
         'slug',
         'status',
         'user_id',
         'site_id',
+        'meta_title',
+        'meta_description',
+        'feature_image',
     ];
 
 }
