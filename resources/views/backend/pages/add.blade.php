@@ -53,7 +53,7 @@
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                           @foreach ($lang as $tabs)
                             <li class="nav-item">
-                              <a class="nav-link " id="home-tab" data-toggle="tab" href="#{{$tabs['language'] }}" role="tab" aria-controls="home" aria-selected="true">{{ $tabs['language'] }}</a>
+                              <a class="nav-link " id="home-tab" data-toggle="tab" href="#{{$tabs['name'] }}" role="tab" aria-controls="home" aria-selected="true">{{ $tabs['name'] }}</a>
                             </li>
                             @endforeach
                           </ul>
@@ -61,10 +61,10 @@
 
                       <div class="tab-content" id="myTabContent">
                         @foreach ($lang as $tabs)
-                        <div class="tab-pane fade " id="{{$tabs['language'] }}" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade " id="{{$tabs['name'] }}" role="tabpanel" aria-labelledby="home-tab">
                           <div class="row">
                             <div class="col-md-12">
-                              <p class="my-3" style="font-size:10px;margin:0;">Please Upload Data in {{ $tabs['language'] }} </p>
+                              <p class="my-3" style="font-size:10px;margin:0;">Please Upload Data in {{ $tabs['name'] }} </p>
                             </div>
                             <div class="col-md-12">
                                   <div class="form-group">

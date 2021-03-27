@@ -3,6 +3,7 @@
     Edit Product - {{config('app.name')}}
 @endsection
 @section('content')
+
     <div class="header pb-6 d-flex align-items-center" style="min-height: 200px; background-image: url(../assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
         <!-- Mask -->
         <span class="mask bg-gradient-default opacity-8"></span>
@@ -50,6 +51,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
+
 
                                         <select class="form-control " name="category[]" id="" cols="30" rows="10">
                                             <option  class="dropdown-item">Select Category</option>
@@ -197,6 +199,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="col-md-12">
@@ -301,8 +304,11 @@
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -337,7 +343,10 @@
                         <input type="text" name="price[]" class="form-control">
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
+
 @endsection

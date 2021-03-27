@@ -30,19 +30,19 @@ Brands - Cooutfits
                     <td>1</td>
                     <td>
                     <a href="{{route('language.edit',$languages->id)}}">
-                    {{$languages->language}}</td>
+                    {{$languages['name']}}</td>
                     </a>
-                    <td>{{$languages->sku}}</td>
+                    <td>{{$languages['sku']}}</td>
                     <td>
-                        @if($languages->status == 1)
+                        @if($languages['status'] == 1)
                         Enabled
                         @else
                         Disabled
                         @endif
                     </td>
-                    <td>{{$languages->created_at}}</td>
+                    <td>{{$languages['created_at']}}</td>
                     <td class="text-center">
-                    <form action="{{ route('language.destroy',$languages->id) }}" method="POST">
+                    <form action="{{ route('language.destroy',$languages['id']) }}" method="POST">
                         <p class="m-0">
                             @csrf
                             @method('DELETE')

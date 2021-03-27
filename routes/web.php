@@ -13,7 +13,9 @@ use App\Http\Controllers\Backend\Language\LanguageChangeController;
 use App\Http\Controllers\Backend\Language\LanguageController;
 use App\Http\Controllers\Backend\Currency\CurrencyController;
 use App\Http\Controllers\Backend\Local\LocaleController;
+
 use App\Http\Controllers\Backend\Menu\MenuController;
+
 
 use App\Http\Controllers\Frontend\Home\HomeController as Home;
 use App\Http\Controllers\Frontend\ProductController as Product;
@@ -25,6 +27,9 @@ use App\Http\Controllers\Frontend\LanguageSwitcher;
 use App\Http\Controllers\Backend\Post\PostsController;
 use App\Http\Controllers\Backend\page\PageController;
 use App\Http\Controllers\Frontend\blog\BlogController;
+
+use App\Http\Controllers\Backend\page\PagesmenuController;
+
 
 use App\Http\Controllers\Frontend\HomeController as frontend;
 
@@ -59,7 +64,11 @@ Route::middleware(['auth','site','usersite'])->group(function () {
     Route::resource('/category', CategoryController::class);
     Route::resource('/product', ProductController::class);
     Route::resource('/attribute', AttributeController::class);
+
     Route::post('/products/{id}', [ProductController::class,'update']);
+
+//    Route::post('/products/{id}', [ProductController::class,'update']);
+   
 
     Route::resource('/lang', LanguageChangeController::class);
     Route::resource('/language', LanguageController::class);
@@ -71,14 +80,14 @@ Route::middleware(['auth','site','usersite'])->group(function () {
     Route::resource('/posts', PostsController::class);
     Route::post('/upload', [PostsController::class,'upload']);
     Route::resource('/pages', PageController::class);
+
+
     Route::post('/upload', [PageController::class,'upload']);
     Route::resource('/variation', VariationController::class);
-    // Route::get('menu', function () {
-    //     return view('backend/menu/index');
-    // });
+
 });
 require __DIR__.'/auth.php';
-
+Route::get('/page/{slug}', [PageController::class,'pagedetails']);
 
 Route::resource('/shop', Product::class);
 Route::resource('/collection', ProductByCategory::class);
@@ -91,7 +100,12 @@ Route::resource('/blog',BlogController::class);
 Route::get('/post/{slug}', [BlogController::class,'singlepost']);
 
 
+
 Route::get('shope', function () {
     return view('frontend/order-complete/index');
 });
 Route::resource('/site', SiteController::class);
+
+Route::get('/test1' , [BlogController::class,'test'] );
+Route::post('/test' , [BlogController::class,'test1'] );
+

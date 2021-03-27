@@ -17,7 +17,7 @@ class CreatePagesTextsTable extends Migration
             $table->increments('id')->unsigned();
             $table->unsignedInteger('pagesID');
             $table->string('title')->nullable();
-            $table->string('page_text')->nullable();
+            $table->text('page_text')->nullable();
             $table->unsignedInteger('languageID');
             $table->foreign('pagesID')->references('id')->on('pages')->onDelete('cascade');
             $table->foreign('languageID')->references('id')->on('languages')->onDelete('cascade');

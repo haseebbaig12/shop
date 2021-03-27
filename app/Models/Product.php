@@ -8,6 +8,8 @@ class Product extends Model
 {
     protected $table = 'product_basic';
     protected $fillable = [
+      
+    
         'slug',
         'status',
         'user_id',
@@ -15,8 +17,10 @@ class Product extends Model
         'meta_title',
         'meta_description',
         'feature_image',
+
         'price',
         'stock',
+
     ];
 
 }

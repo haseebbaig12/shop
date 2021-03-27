@@ -29,7 +29,7 @@
               </div>
           </div>
         </div>
-        
+
 
       </div>
 
@@ -50,22 +50,26 @@
                       <ul class="nav nav-tabs" id="myTab" role="tablist">
                         @foreach($language as $languages)
                         <li class="nav-item">
-                          <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{$languages->name}}{{$languages->id}}" role="tab" aria-controls="home" aria-selected="true">{{$languages->name}}</a>
+
+                          <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{$languages['name']}}{{$languages['id']}}" role="tab" aria-controls="home" aria-selected="true">{{$languages['name']}}</a>
+
                         </li>
                         @endforeach
                       </ul>
                       <div class="tab-content" id="myTabContent">
                         @foreach($language as $languages)
-                        <div class="tab-pane fade" id="{{$languages->name}}{{$languages->id}}" role="tabpanel" aria-labelledby="home-tab">
+
+                        <div class="tab-pane fade" id="{{$languages['name']}}{{$languages['id']}}" role="tabpanel" aria-labelledby="home-tab">
                           <div class="row">
                             <div class="col-md-12">
-                              <p class="my-3" style="font-size:10px;margin:0;">Please Upload Data in {{$languages->name}} </p>
+                              <p class="my-3" style="font-size:10px;margin:0;">Please Upload Data in {{$languages['name']}} </p>
+
                             </div>
                             <div class="col-md-12">
                                   <div class="form-group">
                                     <label class="bmd-label-floating">TITLE</label>
                                     <input type="text" name="name[]" class="form-control">
-                                    <input type="hidden" name="language[]" value="{{$languages->id}}" class="form-control">
+                                    <input type="hidden" name="language[]" value="{{$languages['id']}}" class="form-control">
                                   </div>
                             </div>
                             <div class="col-md-12">
@@ -74,28 +78,13 @@
                                   <textarea name="short_description[]" class="form-control" name="" id="editor" cols="30" rows="10"></textarea>
                               </div>
                             </div>
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <label class="bmd-label-floating">Price</label>
-                                  <input class="form-control" name="" id="" >
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                  <select class="form-control" name="" id="" cols="30" rows="10">
-                                    <option>Currency</option>
-                                    <option>AE</option>
-                                    <option>USD</option>
-                                  </select>
-                              </div>
-                            </div>
                           </div>
                         </div>
                         @endforeach
                       </div>
-              
-                      
-                      
+
+
+
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
@@ -116,8 +105,8 @@
                       </div>
                     </div>
                   </div>
-                  
-                
+
+
                   <div class="clearfix"></div>
               </div>
             </div>

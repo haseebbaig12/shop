@@ -44,14 +44,15 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $id = Auth::user()->parentID;
-        $admin = Auth::user()->id;
+
+
         // below $language from language Model
         $language = session()->get('language');
-        $site_id= userSite::where('user',$admin)->get()->first();
-        $attribute= Attribute::where('userID',$admin)->where('siteID',$site_id->site)->get();
-        $variation= Variation::where('userID',$admin)->where('siteID',$site_id->site)->get();
-        $category= Category::where('userID',$admin)->where('siteID',$site_id->site)->where('status',1)->get();
+
+        $attribute= Attribute::where('userID',session()->get('id'))->where('siteID',session()->get('site'))->get();
+        $variation= Variation::where('userID',session()->get('id'))->where('siteID',session()->get('site'))->get();
+        $category= Category::where('userID',session()->get('id'))->where('siteID',session()->get('site'))->where('status',1)->get();
+
         return view('backend/product/add',compact('language','attribute','variation','category'));
     }
 
@@ -63,25 +64,37 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
 //         dd($request);
+//         $id = session()->get('id');
+//         $site_id= userSite::where('user',$id)->get()->first(); 
+
+
         $id = session()->get('id');
-        $site_id= userSite::where('user',$id)->get()->first();
+        $site_id= session()->get('site');
+
         if($request->feature_image){
             $fimage = $request->file('feature_image');
             $featureimage = rand(10000,100000000) . '.' . $fimage->getClientOriginalExtension();
             $fimage->move(public_path('backend/img/product/'), $featureimage);
+
+    }else{
+            $featureimage= 'Null';
         }
         $basic=[
+//             'bprice'=>$request->bprice,
+         
             'slug'=>$request->slug,
             'status'=>$request->status,
             'meta_title'=>$request->meta_title,
             'meta_description'=>$request->meta_description,
-            'site_id'=>$site_id->site,
+//             'site_id'=>$site_id->site,
+          'site_id'=>$site_id,
             'user_id'=>$id,
             'feature_image'=>$featureimage,
             'price'=>$request->pprice,
             'stock'=>$request->stock,
-        ];
+          ];
         $productcreate =Product::create($basic);
         $product_id= $productcreate->id;
         $product_cat = array();
@@ -160,7 +173,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $data = array();
-//       $language = Language::where('site_id',session()->get('site'))->where('status',1)->get();
+
         $language = session()->get('language');
         $product = Product::where('id',$id)->where('site_id',session()->get('site'))->get()->first();
         $category = Category::where('siteID',session()->get('site'))->get();
@@ -169,8 +182,7 @@ class ProductController extends Controller
         $attribute= Attribute::where('siteID',session()->get('site'))->get();
         $variation= Variation::where('siteID',session()->get('site'))->get();
         $product_type= ProductType::where('product_id',$id)->get();
-
-        foreach($language as $lang){
+foreach($language as $lang){
             $product_text = ProductText::where('language',$lang->id)->where('product_id',$id)->get()->first();
             $category = Category::where('siteID',session()->get('site'))->get();
             if($product_text!=Null ){
@@ -182,6 +194,7 @@ class ProductController extends Controller
                     'short_description'  => $product_text['short_description'],
                 ];
             }
+
 
             elseif($product_text == Null){
                 $data[]=[
@@ -198,16 +211,12 @@ class ProductController extends Controller
         return view('backend/product/edit',compact('language','product_image','product','data','category','attribute','variation','product_type','product_category'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request,$id)
+    public function update(Request $request)
     {
-        $product= Product::where('id',$id)->where('site_id',session()->get('site'))->get()->first();
+
+      $id=  $request->id;
+    $product= Product::where('id',$id)->where('site_id',session()->get('site'))->get()->first();
+
         if($request->feature_image){
             $fimage = $request->file('feature_image');
             $featureimage = rand(10000,100000000) . '.' . $fimage->getClientOriginalExtension();
@@ -215,6 +224,7 @@ class ProductController extends Controller
         }else{
             $featureimage = $product->feature_image;
         }
+
         $basic=[
             'slug'=>$request->slug,
             'status'=>$request->status,
@@ -225,6 +235,18 @@ class ProductController extends Controller
             'stock'=>$request->stock,
         ];
         $productupdate = $product->update($basic);
+
+//     $basic=[
+//         'bprice'=>$request->bprice,
+//         'stock'=>$request->stock,
+//         'slug'=>$request->slug,
+//         'status'=>$request->status,
+//         'meta_title'=>$request->meta_title,
+//         'meta_description'=>$request->meta_description,
+//         'feature_image'=>$featureimage,
+//     ];
+//     $productupdate = $product->update($basic);
+
         $language =$request->language;
         $x=0;
         foreach($language as $lang){
@@ -251,96 +273,56 @@ class ProductController extends Controller
                 ];
                 ProductText::create($emptydata);
             }
-
-            $x++;
+         $x++;
 
         }
 
-        $product_var = array();
-        if($request['variation']){
-            for ($x = 0; $x < sizeof($request['variation']); $x++) {
+   $product_var = array();
+            $x=0;
+          foreach($request['variation'] as $vari){
+            $type = ProductType::where('product_id',$request['id'])->where('variation',$vari)->get()->first();
+
+            if($x==sizeof($request['variation'])){
+                    $x=$x-1;
+                }
+
+            if($type==Null){
+
                 $product_var = array(
-                    "variation" =>$request['variation'][$x],
+                    "product_id"=>$request['id'],
+                     "variation" =>$request['variation'][$x],
                     "attribute" => $request['attribute'][$x],
                     "price" => $request['price'][$x],
                 );
-                // dd($product_var);
-                $type = ProductType::where('product_id',$id)->where('id',$request['typeID'][$x]);
-                if($type){
-                    $type->update($product_var);
-                }
+ProductType::create($product_var);
+}
+            elseif($type != Null) {
+
+                $product_var = array(
+                    "variation" => $request['variation'][$x],
+                    "attribute" => $request['attribute'][$x],
+                    "price" => $request['price'][$x],
+                );
+                $type = ProductType::where('product_id', $request['id'])->where('id', $request['typeID'][$x])->get()->first()->update($product_var);
 
             }
+
+              $x++;
         }
-
-
-
-
-
-
-//        $variations= Variation::where('siteID',session()->get('site'))->where('status',1)->get();
-//        dd($variations);
-//        $x=0;
-//        foreach($variations as $variation){
-//            $type = ProductType::where('product_id',$id)->where('variation',$variation)->get()->first();
-//
-//            if($productText != null){
-//                $Text = array();
-//                if($x==sizeof($request['name'])){
-//                    $x=$x-1;
-//                }
-//                $Text=[
-//                    "name" =>$request['name'][$x],
-//                    "long_description" => $request['long_description'][$x],
-//                    "short_description" =>$request['short_description'][$x],
-//                ];
-//                $productText->update($Text);
-//            }
-//            elseif($productText==Null){
-//                $emptydata=[
-//                    "product_id" => $id,
-//                    "name" =>$request['name'][$x],
-//                    "long_description" => $request['long_description'][$x],
-//                    "short_description" =>$request['short_description'][$x],
-//                    "language" => $request['language'][$x]
-//                ];
-//                ProductText::create($emptydata);
-//            }
-//
-//            $x++;
-//
-//        }
-
-
-
-//        $product_var = array();
-//        if($request['variation']){
-//            for ($x = 0; $x < sizeof($request['variation']); $x++) {
-//                $product_var = array(
-//                    "variation" =>$request['variation'][$x],
-//                    "attribute" => $request['attribute'][$x],
-//                    "price" => $request['price'][$x],
-//                );
-//                $type = ProductType::where('product_id',$id)->where('id',$request['typeID'][$x]);
-//                    $type->update($product_var);
-//            }
-//        }
-
-
         $imagess = array();
+          if($request['image']){
         $abc=$request['image'];
-        // for ($x = 0; $x < sizeof($request['image']); $x++) {
-        foreach($abc as $key=>$value){
+        foreach($abc as $key=>$value) {
             $image = $request->file('image')[$key];
 
-            $filenameimage[$key] = rand(1000,100000000) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('backend/img/product/'), $filenameimage[$key]);
+            $filenameimage[$key] = rand(1000, 100000000) . '.' . $image->getClientOriginalExtension();
+           $image->move(public_path('backend/img/product/'), $filenameimage[$key]);
             $imagess = array(
                 "image" => $filenameimage[$key],
-                // "image_id" => $request['image_id'][$x],
             );
+        }
 
-            $productimage = ProductImage::where('product_id',$id)->where('image_id',$request['image_id'][$key])->get()->first();
+            $productimage = ProductImage::where('product_id',$request['id'])->where('image_id',$request['image_id'][$key])->get()->first();
 
             $productimage->update($imagess);
         }

@@ -20,6 +20,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+
         if(session()->get('lang') != null){
             $language = session()->get('lang');
         }else{
@@ -49,7 +50,9 @@ class ProductController extends Controller
                 'language' => isset($producttext->language) ? $producttext->language : '',
 
             ];
-        }       return view('frontend.product.product',compact('compproduct'));
+        }       
+      return view('frontend.product.product',compact('compproduct'));
+
     }
 
     /**

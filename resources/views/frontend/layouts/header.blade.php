@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
     <link _ngcontent-qir-c48="" rel="stylesheet" href="//fonts.googleapis.com/css?kit=tss5AopFczcE_wznPz-F8xbfxceEzGlaw9cIPzBu1BOYtHnsSURAjU_1uvvwfndqEAM">
@@ -61,11 +62,13 @@
         <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
+
             <span style="background:white; width:40px;display: block" class="my-2"></span>
             <span style="background:white;height:8px; width:40px;display: block;" class="my-2"></span>
             <span style="background:white;height:8px; width:40px;display: block;" class="my-2"></span>
             <span style="background:white;height:8px; width:40px;display: block;" class="my-2"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto">
                 <li class="nav-item  active">
@@ -102,6 +105,7 @@
 
                         @endforeach
                         {{--                            <div class="dropdown-divider"></div>--}}
+
                     </div>
                 </li>
             </ul>
@@ -118,3 +122,5 @@
 
     </nav>
 </header>
+
+      

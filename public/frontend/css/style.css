@@ -3,9 +3,11 @@ body{
     padding: 0px 0px;
 
  }
+
 .body {
     min-height: 72.7vh !important;
 }
+
  @font-face {
      font-family:EurostileBold;
      src: url(../font/eurostile/EurostileBold.ttf);
@@ -22,9 +24,21 @@ h2.eed {
     font-family: 'EurostileBold';
 }
 
+
  .parend{
 
      background-image: url(../img/martial-arts-hero-section-bg1.jpg) !important;
+
+/*p.rrf {*/
+/*    width: 54%;*/
+/*    font-family: cursive;*/
+/*}*/
+
+
+ .parend{
+
+     background-image: url(../img/martial-arts-hero-section-bg1.jpg);
+
      background-size: cover;
      background-repeat: no-repeat;
      width: 100%;
@@ -203,7 +217,7 @@ nav.navbar.navbar-expand-lg {
      width: 62%;
  }
  .main-0 {
-     height: 82pxbg
+     height: 82px;
  }
  span.sp-1 {
      margin: 0px 35px;
@@ -375,8 +389,11 @@ footer.footer {
     color: white;
     /* height: 72px; */
     /*position: absolute;*/
-    /*bottom: 0;*/
-    /*width: 100%;*/
+
+
+    bottom: 0;
+    width: 100%;
+
 }
  .active,.btn:hover {
      border-bottom:1px solid white ;

@@ -1,6 +1,6 @@
 @extends('backend/layouts/master')
 @section('title')
-Product - Cooutfits 
+Product - Cooutfits
 @endsection
 @section('content')
 <div class="row">
@@ -29,14 +29,14 @@ Product - Cooutfits
                 @foreach($product as $products)
                 <tr>
                     <td>1</td>
-                    <td>     
-                      <a href="{{route('product.edit',$products->id)}}">                   
-                      <img class="d-block" height="60px" width="60px" src="{{asset('backend/img/category')}}/{{$products->image}}" alt="">
+                    <td>
+                      <a href="{{route('product.edit',$products->id)}}">
+                      <img class="d-block" height="60px" width="60px" src="{{asset('backend/img/product')}}/{{$products->feature_image}}" alt="">
                       </a>
                     </td>
                     <td>
-                    <a href="{{route('product.edit',$products->id)}}">  
-                    {{$products->name}}</td>
+                    <a href="{{route('product.edit',$products->id)}}">
+                    {{$products->meta_title}}</td>
                     </a>
                     <td>{{$products->slug}}</td>
                     <td>

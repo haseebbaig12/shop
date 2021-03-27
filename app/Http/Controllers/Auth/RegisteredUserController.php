@@ -42,10 +42,11 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'user_type'=>'Client'
         ]));
 
         event(new Registered($user));
-
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/Dashboard');
+//        return redirect(RouteServiceProvider::HOME);
     }
 }

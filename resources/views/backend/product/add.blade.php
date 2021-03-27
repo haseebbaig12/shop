@@ -3,6 +3,7 @@
     Add Product - {{config('app.name')}}
 @endsection
 @section('content')
+
     <!-- Header -->
     <div class="header pb-6 d-flex align-items-center" style="min-height: 200px; background-image: url(../assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
         <!-- Mask -->
@@ -152,6 +153,7 @@
                                         @endforeach
                                     </div>
                                 </div>
+
                             </div>
 
                             <hr class="my-4" />
@@ -183,6 +185,7 @@
                                     <input class="form-control" name="pprice" >
                                 </div>
                             </div>
+
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Stock</label>
@@ -289,6 +292,7 @@
                     $(wrapper).append($(fieldHTML).clone());
                 }
             });
+
 
             //Once remove button is clicked
             $(wrapper).on('click', '.remove_button', function(e){

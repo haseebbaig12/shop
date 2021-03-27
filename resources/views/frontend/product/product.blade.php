@@ -6,9 +6,11 @@
 
     <div class="body">
 
+
         <div role="main" class="main shop pt-4">
 
             <div class="container">
+
 
                 <div class="masonry-loader masonry-loader-showing">
                     <div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
@@ -37,6 +39,7 @@
 
                                             </div>
                                         </a>
+
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <div>
@@ -60,6 +63,7 @@
 
 
                     </div>
+
                     <div class="row mt-4">
                         <div class="col">
                             <ul class="pagination float-right">
@@ -70,6 +74,7 @@
                                 <a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
                             </ul>
                         </div>
+
                     </div>
                 </div>
 
