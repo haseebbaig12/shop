@@ -5,7 +5,6 @@
 * Product Page: https://www.creative-tim.com/product/argon-dashboard
 
 
-
 * Copyright  Creative Tim (http://www.creative-tim.com)
 * Coded by www.creative-tim.com
 
@@ -98,12 +97,9 @@
             <a class="nav-link" href="{{route ('category.index')}}">
               <i class="ni ni-collection"></i>
               <span class="nav-link-text">Category</span>
-
-  
             </a>
           </li>
-
-
+         
           
          
           
@@ -123,7 +119,6 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <i class="ni ni-world"></i>
               <span class="nav-link-text">Locale</span>
-
             </a>
             <div class="dropdown-menu  dropdown-menu-right ">
               <div class="dropdown-header noti-title">
@@ -148,15 +143,12 @@
               
             </div>
           </li>
-
           
          
           {{-- <li class="nav-item">
             <a class="nav-link active active-pro" href="upgrade.html">
               <i class="ni ni-send text-dark"></i>
               <span class="nav-link-text">Upgrade to PRO</span>
-
-
             </a>
           </li> --}}
         </ul>
@@ -165,11 +157,9 @@
         </h6>
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item dropdown">
-
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <i class="ni ni-world"></i>
               <span class="nav-link-text">Language</span>
-
             </a>
             <div class="dropdown-menu  dropdown-menu-right ">
               <div class="dropdown-header noti-title">
@@ -185,7 +175,6 @@
         </ul>
       </div>
     </div>
-
   </div>
 </nav>
-
+<div class="main-content" id="panel">
