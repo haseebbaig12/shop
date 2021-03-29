@@ -5,12 +5,13 @@
 @section('content')
 
 
+
 <!-- Header -->
 <div class="header pb-6 d-flex align-items-center" style="min-height: 200px; background-image: url(../assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
   <!-- Mask -->
   <span class="mask bg-gradient-default opacity-8"></span>
   <!-- Header container -->
-  
+
 </div>
 <!-- Page content -->
 <form action="{{route ('locale.store')}}" method="POST">
@@ -32,11 +33,11 @@
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
             {{-- <a href="#" class="btn btn-sm btn-info  mr-4 ">Connect</a> --}}
-            
+
             <p type="submit" class="">Add Menu Item</p>
           </div>
         </div>
-       
+
         <div class="card-body pt-0">
           <div class="row">
             <div class="col-md-12">
@@ -49,13 +50,13 @@
                           </a>
                         </h5>
                       </div>
-                  
+
                       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
                             <div class="form-group m-0">
                                 <input type="text">
                             </div>
-                           
+
                                 {{-- <label class="bmd-label-floating">Language</label> --}}
                                 @foreach ($data['category'] as $categories)
                                 <div class="form-group m-0">
@@ -82,7 +83,7 @@
                             <div class="form-group">
                                 <input type="text">
                             </div>
-                            
+
                                 {{-- <label class="bmd-label-floating">Language</label> --}}
                                 @foreach ($data['post'] as $post)
                                 <div class="form-group m-0">
@@ -109,7 +110,7 @@
                             <div class="form-group">
                                 <input type="text">
                             </div>
-                           
+
                             @foreach ($data['pages'] as $page)
                             <div class="form-group m-0">
                             <input type="checkbox" value="" >
@@ -135,7 +136,7 @@
                             <div class="form-group">
                                 <input type="text">
                             </div>
-                           
+
                             @foreach ($data['product'] as $product)
                             <div class="form-group m-0">
                             <input type="checkbox" value="{{route('single-product.edit',$product->slug)}}" >
@@ -153,7 +154,7 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              
+
             </div>
           </div>
         </div>
@@ -166,13 +167,13 @@
         </div>
         <div class="card-body">
 
-        
+
 
           <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
 
-                  
+
                 </div>
               </div>
             </div>
@@ -182,9 +183,9 @@
 
                   {{-- <select name="currency_id" id=""  class="form-control">
                       <option value="" class="dropdown-item">Select Currency</option>
-                 
+
                     <option value="" class="dropdown-item">ED</option>
-                   
+
                   </select> --}}
                 </div>
               </div>
