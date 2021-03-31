@@ -36,6 +36,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+
         $cat =array();
         $language = session()->get('language');
         $category = Category::where('siteID',session()->get('site'))->where('p_id',0)->get();
@@ -49,6 +50,7 @@ class CategoryController extends Controller
 
     }
         return view('backend/category/add',compact('language','cat'));
+
     }
 
     public function store(Request $request)
