@@ -115,10 +115,16 @@ class BlogController extends Controller
     public function test1(Request $request){
 
 
-        dd($request['indexs'],$request['positions']);
-//        foreach ($request['indexs'] as $key=>$value){
-//            dd($value);
-//        }
+//        dd($request['indexs'],$request['positions']);
+        foreach ($request['positions'] as $key=>$value){
+            foreach ($request['indexs'] as $key=>$valu){
+                $hellow = $valu;
+                $hi = $value;
+            }
+            dd($hellow,$hi);
+        }
+
+//        dd($hellow);
 //        if (isset($_POST['indexs'])){
 //            foreach ($_POST['indexs'] as $id){
 //                $index = $id;

@@ -1,5 +1,7 @@
 <?php
 
+
+namespace App\Http\Controllers;
 namespace App\Http\Controllers\Backend\Menu;
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
@@ -18,12 +20,14 @@ class MenuController extends Controller
      */
     public function index()
     {
+
         // dd('Welcome      to      Karachi');
         $data['category']=Category::where('status',1)->get();
         $data['pages']=Pages::where('status',1)->get();
         $data['post']=Posts::where('status',1)->get();
         $data['product']=Product::where('status',1)->get();
         return view('backend.menu.index',compact('data'));
+
     }
 
     /**
@@ -47,24 +51,16 @@ class MenuController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\MenuController  $menuController
-     * @return \Illuminate\Http\Response
-     */
-    public function show(MenuController $menuController)
+    
+   public function show(MenuController $menuController)
+
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\MenuController  $menuController
-     * @return \Illuminate\Http\Response
-     */
+  
     public function edit(MenuController $menuController)
+
     {
         //
     }
@@ -73,10 +69,17 @@ class MenuController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MenuController  $menuController
+
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+//     public function update(Request $request, $id)
+
+//      * @param  \App\Models\MenuController  $menuController
+//      * @return \Illuminate\Http\Response
+//      */
     public function update(Request $request, MenuController $menuController)
+
     {
         //
     }
@@ -84,11 +87,9 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MenuController  $menuController
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(MenuController $menuController)
     {
-        //
+
     }
 }

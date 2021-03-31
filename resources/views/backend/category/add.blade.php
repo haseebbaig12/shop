@@ -59,17 +59,63 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-8 order-xl-1">
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <h4 class="card-title">Add Category</h4>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">SLUG</label>
-                      <input name="code" type="text" class="form-control">
+
+
+
+      </div>
+
+      <div class="col-md-9">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">Add Category</h4>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">SLUG</label>
+                        <input name="code" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        @foreach($language as $languages)
+                        <li class="nav-item">
+                          <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{$languages['name']}}{{$languages['id']}}" role="tab" aria-controls="home" aria-selected="true">{{$languages['name']}}</a>
+                        </li>
+                        @endforeach
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        @foreach($language as $languages)
+                        <div class="tab-pane fade" id="{{$languages['name']}}{{$languages['id']}}" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <p class="my-3" style="font-size:10px;margin:0;">Please Upload Data in {{$languages['name']}} </p>
+                            </div>
+                            <div class="col-md-12">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">TITLE</label>
+                                    <input type="text" name="name[]" class="form-control">
+                                    <input type="hidden" name="language[]" value="{{$languages['id']}}" class="form-control">
+                                  </div>
+                            </div>
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <select name="p_id" id=""  class="form-control">
+                                          <option value="0" class="dropdown-item">Parent Category</option>
+                                          @foreach($cat as $cata)
+                                          <option value="{{$cata['id']}}" class="dropdown-item">{{$cata['name']}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                              </div>
+
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Short Description</label>
+                                  <textarea name="short_description[]" class="form-control" name="" id="editor" cols="30" rows="10"></textarea>
+                              </div>
+               <input name="code" type="text" class="form-control">
                     </div>
                   </div>
                   <div class="col-md-12">
@@ -98,6 +144,7 @@
                             <div class="form-group">
                               <label class="bmd-label-floating">Short Description</label>
                                 <textarea name="short_description[]" class="form-control" name="" id="editor" cols="30" rows="10"></textarea>
+
                             </div>
                           </div>
                         </div>
