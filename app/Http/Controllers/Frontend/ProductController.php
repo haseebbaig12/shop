@@ -39,7 +39,8 @@ class ProductController extends Controller
           'language' => $producttext->language,
         //   'image' => $productimg->image,
         ];
-    }       return view('frontend.product.product',compact('compproduct'));
+    }
+      return view('frontend.product.product',compact('compproduct'));
 
 
     }
