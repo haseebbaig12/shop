@@ -41,13 +41,13 @@ class ProductController extends Controller
                 'stock'=>  $products->stock,
                 'id' => $products->id,
                 'feature_image'=>$products->feature_image,
-
-                'name' =>isset($producttext->name) ? $producttext->name : '' ,
+                 'name' =>isset($producttext->name) ? $producttext->name : '' ,
                 'category' =>isset($categoryText) ? $categoryText : '',
                 'category_slug'=>isset($category->code) ? $category->code : '',
                 'short_desc' =>isset($producttext->short_description) ? $producttext->short_description : '' ,
                 'long_desc' => isset($producttext->long_description) ? $producttext->long_description : '' ,
                 'language' => isset($producttext->language) ? $producttext->language : '',
+
 
             ];
         }       
