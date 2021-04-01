@@ -1,20 +1,33 @@
 <footer  class="footer">
-    <div class="row m-0 py-3">
-        <div class="col-3 d-flex px-5">
+    <div class="row m-0 p-0">
+        <div class="col-lg-3 col-md-12 col-sm-12 d-flex">
             <img class=" muzaa" src="{{asset('frontend/img/LOGO.PNG')}}" alt="">
 
         </div>
-        <div class="col-8 py-1">
+        <div class="col-lg-7 col-md-12 col-sm-12 ">
 
             <div class="muz=">
                 <span class="sp-1">COPYRIGHT 2021 ©KAF JIU JITSU.COM | ALL RIGHTS RESERVED </span>
+            </div>
+
+        </div>
+        <div class="col-lg-1 col-md-12 col-sm-12 ">
+            <div class="muz-1">
                 <img class="face" src="{{asset('frontend/img/facebook-01.png')}}" alt="">
                 <img class="face"  src="{{asset('frontend/img/instagram.png')}}" alt="">
             </div>
-            <div class="col-1">
-                <div class="e3w"></div>
+        </div>
+        <div class="col-lg-1 col-md-0  col-sm-0 ">
+            <div class="e3w"></div>
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col-12 p-0">
+            <div class="footer-last">
+                <span class="sp-1">COPYRIGHT 2021 ©KAF JIU JITSU.COM | ALL RIGHTS RESERVED </span>
             </div>
         </div>
+    </div>
 
     </div>
 
@@ -29,7 +42,6 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
@@ -71,7 +83,6 @@
 
 <!-- Examples -->
 <script src="{{asset('frontend/js/examples/examples.gallery.js')}}"></script>
-
 <script>
     // Add active class to the current button (highlight it)
     var header = document.getElementById("myDIV");

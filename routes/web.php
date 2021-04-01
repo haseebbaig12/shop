@@ -18,6 +18,8 @@ use App\Http\Controllers\Backend\Menu\MenuController;
 
 
 use App\Http\Controllers\Frontend\Home\HomeController as Home;
+use App\Http\Controllers\Frontend\Schedule\ScheduleController ;
+use App\Http\Controllers\Frontend\Subscription\SubscriptionController ;
 use App\Http\Controllers\Frontend\ProductController as Product;
 use App\Http\Controllers\Frontend\ProductByCategory;
 use App\Http\Controllers\Frontend\SingleProductController;
@@ -68,7 +70,7 @@ Route::middleware(['auth','site','usersite'])->group(function () {
     Route::post('/products/{id}', [ProductController::class,'update']);
 
 //    Route::post('/products/{id}', [ProductController::class,'update']);
-   
+
 
     Route::resource('/lang', LanguageChangeController::class);
     Route::resource('/language', LanguageController::class);
@@ -95,9 +97,12 @@ Route::resource('/single-product', SingleProductController::class);
 Route::resource('/languages', LanguageSwitcher::class);
 Route::get('/', [Home::class,'index'])->name('Home');
 Route::resource('/cart', CartController::class);
+Route::resource('/schedule', ScheduleController::class);
+Route::resource('/subscription', SubscriptionController::class);
 Route::resource('/checkout', CheckoutController::class);
 Route::resource('/blog',BlogController::class);
 Route::get('/post/{slug}', [BlogController::class,'singlepost']);
+
 
 
 
