@@ -1,1 +1,4 @@
 /* Add here all your CSS customizations */
+input.btn.btn-primary.btn-modern {
+    background: black;
+}

@@ -13,8 +13,9 @@
         </div>
         <div class="col-lg-1 col-md-12 col-sm-12 ">
             <div class="muz-1">
-                <img class="face" src="{{asset('frontend/img/facebook-01.png')}}" alt="">
-                <img class="face"  src="{{asset('frontend/img/instagram.png')}}" alt="">
+                <a href="https://www.facebook.com/"> <img class="face-1" src="{{asset('frontend/img/facebook-01.png')}}" alt=""></a>
+
+                <a href="https://www.instagram.com/"> <img class="face-1"  src="{{asset('frontend/img/instagram.png')}}" alt=""></a>
             </div>
         </div>
         <div class="col-lg-1 col-md-0  col-sm-0 ">
