@@ -1,3 +1,6 @@
+h1,h2,h3,h4,h5,h6{
+    line-height: 1.2 !important;
+}
 body{
     margin: 0px 0px;
     padding: 0px 0px;
@@ -12,19 +15,9 @@ body{
 
 }
 
-img.ees {
-    height: 160px;
-    margin: 0px 5pc;
-}
-h2.eed {
-    margin: 0px 0px;
-    font-size: 31px;
-    font-family: 'EurostileBold';
-}
-
 .parend{
 
-    background-image: url(../img/martial-arts-hero-section-bg1.jpg) !important;
+    background-image: url(../img/martial-arts-hero-section-bg1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -32,6 +25,9 @@ h2.eed {
     position: relative;
     top: -111px;
     margin: -65px 0px;
+}
+.footer-last{
+    display: none !important;
 }
 .row {
     margin-left: 0px;
@@ -59,6 +55,7 @@ h5.card-title {
 .header-1 {
     height: 407px;
 }
+
 button.btn-6 {
     border: none;
     width: 25%;
@@ -108,11 +105,7 @@ button.btn-6 {
     text-align: center;
 }
 nav.navbar.navbar-expand-lg {
-    background: #000000;
-    z-index: 99;
-}
-.homepage nav.navbar.navbar-expand-lg {
-    background: #0000 !important;
+    background: #0000;
     z-index: 99;
 }
 /* nav.navbar.navbar-expand-lg {
@@ -122,7 +115,7 @@ h1.text-9 {
     text-align: center;
     color: #cacacb;
     font-weight: bold;
-    font-size: 77px !important;
+    font-size: 77px;
     padding-bottom: 22px;
     font-family: 'EurostileBold';
 }
@@ -135,7 +128,7 @@ h1.text-9 {
 }
 h1.text-5 {
     text-align: center;
-    font-size: 68px !important;
+    font-size: 68px;
     color: white;
     font-weight: bold;
     font-family: 'EurostileBold';
@@ -145,6 +138,7 @@ h1.text-5 {
 }
 .muz\= {
     text-align: end;
+    margin: 19px 0px;
 }
 h1.text-5::after {
     display: block;
@@ -156,7 +150,7 @@ h1.text-5::after {
 }
 h1.text-6 {
     text-align: center;
-    font-size: 86px !important;
+    font-size: 86px;
     color: #cacacb;
     font-family: 'EurostileBold';
 }
@@ -174,6 +168,7 @@ a.navbar-brand {
     height: 24px;
     /* margin: 0px 21px; */
     padding: 0px 3px;
+    margin: 19px 0px;
 }
 link :hover {
     text-decoration: underline;
@@ -201,6 +196,7 @@ a:hover {
 img.muzaa {
     height: 36px;
     width: 62%;
+    margin: 18px 0px;
 }
 .main-0 {
     height: 82pxbg
@@ -274,13 +270,8 @@ span.bd {
     width: 4rem;
     transform: translateY(-1rem);
     height: 60px;
-
     width: 18%;
     margin: 12px auto;
-
-    /*      width: 25%;
-         margin: 23px auto; */
-
 
 }
 
@@ -324,7 +315,7 @@ a:hover {
 .btn.btn-light.btn-lg {
     background-color: #cacacb;
     font-weight: 700;
-    width: auto;
+    width: 12%;
     font-family: 'EurostileBold';
     font-size: 22px;
 }
@@ -350,7 +341,6 @@ h1.main-2 {
     color: white;
     font-weight: bold;
     margin: 0px 28px;
-    line-height: 1;
     font-family: 'EurostileBold';
 }
 .content-heading.mx-5 {
@@ -373,10 +363,7 @@ h1.main-2 {
 footer.footer {
     background-color: black;
     color: white;
-    /* height: 72px; */
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    /*width: 100%;*/
+    height: 72px;
 }
 .active,.btn:hover {
     border-bottom:1px solid white ;
@@ -384,48 +371,129 @@ footer.footer {
 }
 @media screen and (max-width: 1024px){
     .parend {
-        width: 1397px;
+        /* width: 1397px; */
     }
     .text {
         width: 100%;
         height: 248px;
 
     }
+    .card-1 {
+        width: 17%;
+    }
+    a.navbar-brand {
+        width: 46%;
+    }
+
+    .img-11 {
+        height: 43px;
+        margin: 0px -49px;
+        width: auto;
+    }
+    .nav-item.active {
+        padding: 0px 3px;
+        margin: 0px -5px;
+    }
+    .btn.btn-light.btn-lg {
+        width: auto;
+
+    }
     button.btn.btn-secondary.btn-lg.text-light {
 
-        width: 45%;
+        width: auto;
 
+    }
+    .muz-1 {
+        display: flex;
+    }
+    .muz\= {
+        text-align: center;
+        margin: 26px 0px;
+        font-size: 13px;
+    }
+    img.muzaa {
+        height: 46px;
+        width: auto;
+        margin: 18px 0px;
     }
     .muzzzz {
 
-        width: 1279px;
+        /* width: 1279px; */
     }
     .parend-2 {
-        width: 1396px;
+        /* width: 1396px; */
     }
     h1.text-9 {
-        width: 1216px;
+        /* width: 1216px; */
     }
     .btn-5 {
         text-align: center;
-        width: 1247px;
+        /* width: 1247px; */
     }
     footer.footer {
-        width: 1398px;
+        /* width: 1398px; */
     }
 }
 @media screen and (max-width: 938px) {
     h1.www {
-        font-size: 108px;
+        font-size: 51px;
+    }
+    button.btn-6 {
+        border: none;
+        width: 76%;
     }
     nav.navbar.navbar-expand-lg {
         background:transparent;
         color: white;
     }
+    span.main-1 {
+        color: white;
+        font-weight: bold;
+        font-size: 21px;
+        margin: 0px 0px;
+        font-family: 'EurostileBold';
+    }
+    .header-1 {
+        height: 231px;
+    }
+    h5.card-title {
+        font-size: 39px;
+        /* margin: 35px 0px; */
+        color: #cacacb;
+    }
+    span.sp-1 {
+        margin: 0px 0px;
+        font-family: 'EurostileBold';
+        letter-spacing: 3px;
+    }
+    .muy {
+        height: 1px;
+    }
+    p.card-text {
+        font-size: 8px;
+        margin: 34px -18px;
+        font-family: 'EurostileBold';
+        text-align: center;
+    }
+    .footer-last {
+        display: block !important;
+        background-color: white;
+        /* padding: 0px 0px; */
+        margin: 0p;
+        color: black;
+        font-size: 16px;
+        text-align: center;
+    }
     .img-99 {
-        margin: 0px 22px;
-        width: 1374px;
+        margin: 0px 0px;
+        /* width: 1374px; */
         padding-bottom: 0px;
+        width: 100%;
+    }
+    .card-1 {
+        width: 0%;
+        /* margin: 0px 40px; */
+        height: 564px;
     }
     .jjj {
         height: 23px;
@@ -438,13 +506,14 @@ footer.footer {
     }
     .cont{
         text-align: center;
-        width: 1396px;
+        /* width: 1396px; */
     }
     .text {
         text-align: center;
         width: 93%;
-        font-size: 36px;
-        margin: 0px 28px;
+        font-size: 17px;
+        margin: 0px 0px;
+        height: auto;
     }
     .card.card-body {
         font-size: 28px;
@@ -453,14 +522,16 @@ footer.footer {
         width: 0%;
     }
     img.muzaa {
-        width: 100%;
+        /*width: 100%;*/
+        height: 62px;
     }
     h1.main-2 {
-        font-size: 116px;
+        font-size: 41px;
         color: white;
         font-weight: bold;
     }
     .img-1 {
+
         height: 521px;
         width: 100%;
         position: relative;
@@ -472,7 +543,8 @@ footer.footer {
         font-family: 'EurostileBold';
     }
     .img-11 {
-        height: 99px;
+        height: 37px;
+        margin: 0px -11px;
     }
     div#navbarSupportedContent {
         background: black;
@@ -492,12 +564,12 @@ footer.footer {
         font-size: 34px;
         padding: 5px 0px;
     }
-    /* .btn.btn-light.btn-lg {
+    .btn.btn-light.btn-lg {
         background-color: #cacacb;
         font-weight: 700;
-        width: auto;
+        width: 57%;
         font-size: 26px;
-    } */
+    }
     .lo {
         height: 369px;
     }
@@ -506,28 +578,29 @@ footer.footer {
     }
     .muz\= {
         text-align: center;
-        display: flex;
-        margin: 0px 34px;
+        display: none;
+        margin: 0px 0px;
     }
     .parend{
-        width: 1397px;
+        /* width: 1397px; */
+        top: -60px
     }
     .parend-2 {
-        width: 1395px;
-        height: 868px;
+        /* width: 1395px; */
+        height: 562px;
     }
     .muzzzz {
-        width: 1363px;
+        /* width: 1363px; */
     }
     nav.navbar.navbar-expand-lg {
         background-color: #000;
     }
     h1.text-9 {
-        width: 1344px;
-        font-size: 116px;
+        /* width: 1344px; */
+        font-size: 40px;
     }
     .footer{
-        width: 1397px;
+        /* width: 1397px; */
         height: 65px;
     }
     .text-9::after {
@@ -543,7 +616,7 @@ footer.footer {
         width: 250px;
     }
     .btn-5 {
-        width: 1369px;
+        /* width: 1369px; */
     }
     .face-1 {
         height: 66px;
@@ -553,16 +626,54 @@ footer.footer {
     }
     nav.navbar.navbar-expand-lg {
         z-index: 99;
-        width: 992px;
+        /* width: 992px; */
     }
     span.bd {
-        font-size: 111px;
+        font-size: 67px;
+    }
+    .g00 {
+        height: 102px;
+    }
+    h1.text-5 {
+        text-align: center;
+        font-size: 48px;
+        color: white;
+        font-weight: bold;
+        font-family: 'EurostileBold';
+    }
+    h1.text-6 {
+        text-align: center;
+        font-size: 49px;
+        color: #cacacb;
+        font-family: 'EurostileBold';
+    }
+    footer.footer {
+        background-color: black;
+        color: white;
+        height: 188px;
+    }
+    .card-2 {
+        margin: 1px 34px;
+    }
+    .card-body {
+        font-size: 8px;
+    }
+    .card-header {
+        padding: 0px 0px;
     }
 }
 @media screen and (max-width: 768px){
     .lo {
         height: 640px;
-        width: 1396px;
+        /* width: 1396px; */
+    }
+    p.card-text {
+        font-size: 17px;
+    }
+    .card-1 {
+        width: 15%;
+        margin: 0px 31px;
+        height: 564px;
     }
     .bg {
         height: 223px;
@@ -571,17 +682,63 @@ footer.footer {
         height: 521px;
         width: 100%;
         position: relative;
-        right: 12px;
+        right: 2px;
     }
-
     .parend {
-        width: 1375px;
+        /* width: 1375px; */
     }
     nav.navbar.navbar-expand-lg {
         z-index: 99;
-        width: 1377px;
+        /* width: 1377px; */
     }
+}
+@media screen and (max-width: 667px) {
+    .card-1 {
+        width: 0%;
+        margin: 0px 37px;
+        height: 564px;
+    }
+}
+@media screen and (max-width: 568px) {
+    .card-1 {
+        width: 3%;
+        margin: 0px 28px;
+        height: 564px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .card-1 {
+        width: 4%;
+        margin: 0px 31px;
+        height: 564px;
+    }
+}
+@media screen and (max-width: 280px){
+    .card-1 {
+        width: 0%;
+        margin: 0px 28px;
+        height: 564px;
+    }
+    .g00 {
+        height: 79px;
+    }
+    h1.text-6 {
 
+        font-size: 38px;
+
+    }
+    h1.text-5 {
+        text-align: center;
+        font-size: 39px;
+    }
+    h5.card-title {
+        font-size: 29px;
+        margin: 0px 0px;
+        color: #cacacb;
+    }
+    p.card-text {
+        font-size: 6px;
+    }
 }
 .product-thumb-info-image {
     height: 250px;
@@ -589,5 +746,714 @@ footer.footer {
 
 
 
+/*************************************schedule Page**********************************/
+
+.hdj {
+    height: 19pc;
+}
+
+.pare {
+    background-image: url(../img/Class-Schedule-slider.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 800px;
+    position: relative;
+    top: -111px;
+    margin: -65px 0px;
+}
+
+.mai-1 {
+    font-size: 55px;
+    padding: 0px 35px;
+    color: white;
+    font-family: 'EurostileBold';
+}
+
+h1.main-3 {
+    color: #cacacb;
+    font-family: 'EurostileBold';
+    padding: 0px 36px;
+    font-size: 96px;
+}
+
+.mai-1::after {
+    display: block;
+    content: "";
+    border-top: 0.3rem solid #8b8b8d;
+    width: 4rem;
+    /* margin: 0px 1rem; */
+    transform: translateY(-1rem);
+    height: 5px;
+    width: 14%;
+    margin: 6px 37px;
+}
+
+.spacing-1 {
+    height: 30px;
+}
+
+.content-heading {
+    height: 74px;
+}
+
+button.btn.btn-light.btn-lg-2 {
+    margin: 22px 38px;
+    /*width: 19%;*/
+    /*height: 73px;*/
+    background-color: #cacacb;
+    padding: 15px 40px;
+    color: black;
+    font-family: 'EurostileBold';
+    font-size: 30px;
+}
+
+p.tex {
+    width: 67%;
+    margin: 0 auto;
+    font-size: 27px;
+    font-family: 'EurostileBold';
+}
+
+.spacing-1 {
+    height: 65px;
+}
+
+.spacing-2 {
+    height: 304px;
+}
+
+h1.te {
+    font-size: 85px;
+    color: #b2b1b1;
+    font-family: revert;
+}
+
+span.wweds {
+    color: #b2b1b1;
+    display: block;
+    font-size: 31px;
+    font-family: 'EurostileBold';
+    padding: 0pc 0px;
+    padding-bottom: 34px;
+}
+
+button.vdvc {
+    background-color: #cacacb;
+    border: none;
+    font-family: 'EurostileBold';
+    border-radius: 4px;
+    padding: 4px 11px;
+}
+
+h1.rfdc {
+    padding: 2pc 35px;
+    font-size: 76px;
+    font-family: 'EurostileBold';
+}
+
+hr.grd {
+    /* margin: 0 auto; */
+    width: 98%;
+    color: black;
+    background-color: black;
+    padding: 2px 0px;
+}
+
+.din {
+    width: 14%;
+    display: block;
+}
+
+.dsfc.d-flex {
+    padding: 0px 50px;
+}
+
+h1.fcx {
+    font-size: 51px;
+    color: #cacacb;
+}
+
+span.gdk {
+    font-size: 20px;
+    font-family: 'EurostileBold';
+}
+
+h1.ssc {
+    font-size: 19px;
+    color: #666868;
+    text-align: center;
+    margin-right: 5pc;
+}
+
+.pare-2 {
+    background-image: url(../img/Class-Schedule-slider-table.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    /* position: relative;
+top: -111px; */
+}
+
+.din-1 {
+    width: 15%;
+}
+
+@media only screen and (max-width: 900px) {
+    h1.ssc {
+        font-size: 9px;
+        color: #666868;
+    }
+
+    .pare {
+        /* width: 1397px; */
+        top: 65px;
+        height: 432px;
+    }
+
+    .pare-2 {
+        height: auto;
+    }
+
+    .content-heading {
+        height: 58px;
+    }
+
+    span.gdk {
+        font-size: 9px;
+    }
+
+    .spacing-1 {
+        height: 159px;
+    }
+
+    button.btn.btn-light.btn-lg-2 {
+        margin: 7px -4px;
+        width: 61%;
+        font-size: 21px;
+        height: 45px;
+        width: 51%;
+    }
+
+    .spacing-2 {
+        height: 19px;
+    }
+
+    span.wweds {
+        padding: 0pc 0px;
+    }
+
+    h1.te {
+        font-size: 39px;
+    }
+
+    .span.wweds {
+        color: white;
+        display: block;
+        font-size: 8px;
+    }
+
+    button.vdvc {
+        background-color: #cacacb;
+        border: none;
+        font-family: 'EurostileBold';
+        border-radius: 4px;
+        /* padding: 0px 0px; */
+        height: 34px;
+        font-size: 18px;
+        width: 113px;
+        margin-bottom: 38px;
+    }
+
+    h1.fcx {
+        font-size: 27px;
+        color: #cacacb;
+    }
+
+    h1.main-3 {
+        color: #cacacb;
+        font-family: 'EurostileBold';
+        padding: 0px 0px;
+        font-size: 28px;
+    }
+
+    h1.rfdc {
+        padding: 0pc 36px;
+        font-size: 32px;
+        font-family: 'EurostileBold';
+    }
+
+    .mai-1 {
+        font-size: 27px;
+        padding: 0px 0px;
+        color: white;
+        font-family: 'EurostileBold';
+    }
+
+    .hdj {
+        height: 0pc;
+    }
+
+    .mai-1::after {
+        display: block;
+        content: "";
+        border-top: 0.3rem solid #8b8b8d;
+        width: 4rem;
+        /* margin: 0px 1rem; */
+        transform: translateY(-1rem);
+        height: 5px;
+        width: 44%;
+        margin: 16px 37px;
+    }
+}
 
 
+
+
+
+/**************************subscription page* ***************************/
+.hdj-1 {
+    height: 10pc;
+}
+
+.spacing-22 {
+    height: 156px;
+}
+
+.yes {
+    color: white;
+    font-size: 47px;
+    font-family: 'Roboto', sans-serif;
+    padding: 27px 0px;
+}
+
+p.pr {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 35px;
+    margin: 27px 0px;
+    color: black;
+    font-family: 'EurostileBold';
+}
+.ccsd {
+    text-align: center;
+}
+
+.ddx {
+    border-right: 1px solid #999292;
+    height: 100vh;
+}
+
+p.sn {
+    color: white;
+    margin: 0px 0px;
+    font-family: 'Roboto';
+}
+
+p.sit {
+    color: black;
+    text-align: center;
+    padding-top: 4pc;
+    font-size: 47px;
+    font-weight: bold;
+}
+
+span.card-title {
+    font-size: 67px;
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+}
+
+span.card-title {
+    font-size: 59px;
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+}
+
+p.sit::after {
+    display: block;
+    content: "";
+    border-top: 5px solid #8b8b8d;
+    transform: translateY(-1rem);
+    height: 5px;
+    width: 17%;
+    margin: 30px auto;
+}
+
+.par {
+    background-image: url(../img/martial-arts-hero-section-ddd.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 800px;
+    position: relative;
+    top: -111px;
+    margin: -65px 0px;
+}
+
+.content-heading-1 {
+    margin: 0px 33px;
+}
+span.\32 21 {
+    color: white;
+    font-size: 93px;
+    font-family: fantasy;
+}
+
+h1.mai-22 {
+    font-size: 135px;
+    color: white;
+    font-family: 'EurostileBold';
+}
+
+h1.main-3 {
+    color: #cacacb;
+    font-family: 'EurostileBold';
+    padding: 0px 0px;
+    font-size: 96px;
+}
+.mai-1::after {
+    display: block;
+    content: "";
+    border-top: 0.3rem solid #8b8b8d;
+    width: 4rem;
+    /* margin: 0px 1rem; */
+    transform: translateY(-1rem);
+    height: 5px;
+    width: 14%;
+    margin: 19px 37px;
+}
+
+.spacing-1 {
+    height: 30px;
+}
+
+.content-heading {
+    height: 74px;
+}
+
+button.btn.btn-light.btn-lg-2 {
+    margin: 22px 38px;
+    width: 19%;
+    height: 73px;
+    background-color: #cacacb;
+    color: black;
+    font-family: 'EurostileBold';
+    font-size: 30px;
+}
+
+p.tex {
+    width: 67%;
+    margin: 0 auto;
+    font-size: 27px;
+    font-family: 'EurostileBold';
+    color: black;
+}
+
+.spacing-1 {
+    height: 27px;
+}
+.spacing-2 {
+    height: 95px;
+}
+
+h1.te {
+    font-size: 85px;
+    color: #b2b1b1;
+    font-family: revert;
+    padding: 27px 0px;
+}
+
+span.wweds {
+    color: #b2b1b1;
+    display: block;
+    font-size: 31px;
+    font-family: 'EurostileBold';
+    padding: 0pc 0px;
+    padding-bottom: 34px;
+}
+
+button.vdvc {
+    background-color: #cacacb;
+    border: none;
+    font-family: 'EurostileBold';
+    border-radius: 4px;
+    padding: 4px 11px;
+}
+
+h1.rfdc {
+    padding: 2pc 35px;
+    font-size: 76px;
+    font-family: 'EurostileBold';
+}
+
+hr.grd {
+    /* margin: 0 auto; */
+    width: 98%;
+    color: black;
+    background-color: black;
+    padding: 2px 0px;
+}
+
+.fii {
+    text-align: center;
+    padding-top: 0pc;
+}
+
+span.b {
+    color: white;
+    font-size: 36px;
+    font-family: 'Roboto';
+}
+
+
+h1.fcx {
+    font-size: 51px;
+    color: #cacacb;
+}
+
+span.gdk {
+    font-size: 20px;
+    font-family: 'EurostileBold';
+}
+
+.film::after {
+    display: block;
+    content: "";
+    border-top: 5px solid #8b8b8d;
+    transform: translateY(-1rem);
+    height: 8px;
+    width: 19%;
+    margin: 7px auto;
+    margin: 40px auto;
+}
+
+.film {
+    position: absolute;
+    left: -3%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.par-2 {
+    background-image: url(../img/martial-arts-hero-section-bg4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.par-3 {
+    background-image: url(../img/martial-arts-hero-section-bg3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    /* position: relative;
+top: -111px; */
+}
+
+p.nn {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 55px;
+    text-align: center;
+    padding-top: 5pc;
+}
+
+button.btn-2 {
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    font-size: 26px;
+    background-color: gainsboro;
+    font-weight: bold;
+    width: 60%;
+    height: 48px;
+}
+
+button.btn-1 {
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    font-size: 26px;
+    background-color: gainsboro;
+    font-weight: bold;
+    width: 72%;
+    height: 48px;
+}
+
+span.FI {
+    font-size: 34px;
+    font-family: 'Roboto', sans-serif;
+    color: gray;
+}
+
+p.nd {
+    color: white;
+    margin: 0px 0px;
+    margin-top: 19px;
+    font-family: 'Roboto';
+}
+
+p.no {
+    color: white;
+    font-size: 42px;
+    font-family: 'Roboto';
+    padding-top: 30px;
+}
+.spacing-33 {
+    height: 52px;
+}
+@media only screen and (max-width: 900px) {
+    .ddx {
+        border-right: none;
+        height: 45vh;
+    }
+
+    .par {
+        height: 438px;
+    }
+    .par-2 {
+        height: 204vh;
+    }
+    .spacing-22 {
+        height: 28px;
+    }
+    .par-3 {
+        height: 176vh;
+    }
+    p.pr {
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 18px;
+        margin: 0px 0px;
+    }
+    h1.mai-22 {
+        font-size: 54px;
+    }
+
+    .content-heading-1 {
+        margin: 0px 0px;
+    }
+
+    span.\32 21 {
+    color: white;
+    font-size: 44px;
+    font-family: fantasy;
+}
+
+    .film {
+        position: unset;
+        left: -3%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: block;
+    }
+
+    p.nn {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+        text-align: center;
+        padding-top: 2pc;
+    }
+
+    p.sit {
+        font-size: 33px;
+    }
+
+    .content-heading {
+        height: 53px;
+    }
+
+    span.gdk {
+        font-size: 9px;
+    }
+
+    .spacing-1 {
+        height: 167px;
+    }
+
+    button.btn.btn-light.btn-lg-2 {
+        margin: 0px 5px;
+        width: 61%;
+        font-size: 30px;
+        height: 65px;
+        width: 82%;
+    }
+
+    .spacing-2 {
+        height: 19px;
+    }
+
+    span.wweds {
+        padding: 1pc 0px;
+        font-size: 44px;
+    }
+
+    h1.te {
+        font-size: 89px;
+    }
+
+    .span.wweds {
+        color: white;
+        display: block;
+        font-size: 8px;
+    }
+
+    button.vdvc {
+        background-color: #cacacb;
+        border: none;
+        font-family: 'EurostileBold';
+        border-radius: 4px;
+        /* padding: 0px 0px; */
+        height: 69px;
+        font-size: 40px;
+        width: 75%;
+        margin-bottom: 8px;
+        margin-top: 37px;
+    }
+
+
+    h1.fcx {
+        font-size: 27px;
+        color: #cacacb;
+    }
+
+    h1.main-3 {
+        color: #cacacb;
+        font-family: 'EurostileBold';
+        padding: 0px 0px;
+        font-size: 51px;
+    }
+
+    h1.rfdc {
+        padding: 0pc 36px;
+        font-size: 32px;
+        font-family: 'EurostileBold';
+    }
+
+    .mai-1 {
+        font-size: 36px;
+        padding: 0px 0px;
+        color: white;
+        font-family: 'EurostileBold';
+    }
+    .hdj {
+        height: 3pc;
+    }
+
+    .mai-1::after {
+        display: block;
+        content: "";
+        border-top: 0.3rem solid #8b8b8d;
+        width: 4rem;
+        /* margin: 0px 1rem; */
+        transform: translateY(-1rem);
+        height: 5px;
+        width: 44%;
+        margin: 16px 37px;
+    }
+}
