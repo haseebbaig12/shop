@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/env php
 <?php
 
@@ -22,3 +23,19 @@ if ($replaced) {
     exit(0);
 }
 include $binPath;
+=======
+#!/usr/bin/env sh
+
+dir=$(cd "${0%[/\\]*}" > /dev/null; cd "../phpunit/phpunit" && pwd)
+
+if [ -d /proc/cygdrive ]; then
+    case $(which php) in
+        $(readlink -n /proc/cygdrive)/*)
+            # We are in Cygwin using Windows php, so the path must be translated
+            dir=$(cygpath -m "$dir");
+            ;;
+    esac
+fi
+
+"${dir}/phpunit" "$@"
+>>>>>>> 18fadd4ee1c0d4c9e714fe3a405fb98a2c5332b6

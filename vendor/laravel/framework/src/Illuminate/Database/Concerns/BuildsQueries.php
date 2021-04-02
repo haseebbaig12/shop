@@ -8,8 +8,6 @@ use Illuminate\Database\RecordsNotFoundException;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
-use Illuminate\Support\LazyCollection;
-use InvalidArgumentException;
 
 trait BuildsQueries
 {
@@ -162,6 +160,7 @@ trait BuildsQueries
     }
 
     /**
+<<<<<<< HEAD
      * Query lazily, by chunks of the given size.
      *
      * @param  int  $chunkSize
@@ -232,6 +231,8 @@ trait BuildsQueries
     }
 
     /**
+=======
+>>>>>>> 18fadd4ee1c0d4c9e714fe3a405fb98a2c5332b6
      * Execute the query and get the first result.
      *
      * @param  array|string  $columns

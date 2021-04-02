@@ -18,17 +18,23 @@ class PageController extends Controller
         $indexdata=array();
         $data= array();
         $data=$this->findUserdetail(session()->get('site'));  // $data is Function which is last in the controller
+        // dd($data);
         foreach($data as $datas){
             $username = User::where('id',$datas->userID)->get()->pluck('name')->first();
+            $pagetitle = PagesText::where('pagesID',$datas->id)->get()->pluck('title')->first();
+            // dd();
+
             $indexdata[]=array(
                 'id'=>$datas->id,
-                'meta_title'=>$datas->meta_title,
+                'title'=>$pagetitle,
+                'code'=>$datas->code,
                 'image'=>$datas->image,
                 'status'=>$datas->status,
                 'username'=>$username,
                 'created_at'=>$datas->created_at
             );
         }
+        // dd($indexdata);
         return view('backend/pages/index',compact('indexdata'));
     }
 
@@ -88,7 +94,7 @@ class PageController extends Controller
     {
         $datatext=array();
         $lang = Language::where('site_id',session()->get('site'))->get();
-//        dd($lang);
+        //        dd($lang);
         $pagedata = Pages::where('id',$id)->where('siteID',session()->get('site'))->get()->first();
 
         foreach ($lang as $language){
@@ -125,7 +131,7 @@ class PageController extends Controller
 
         $site = session()->get('site');
         $updatepages = Pages::where('id',$id)->where('siteID',$site)->get()->first();
-//    dd($updatepages);
+        //    dd($updatepages);
         if(!empty($request->file('image'))){
             $image = $request->file('image');
             $imageName = rand(1000,1000000).'.'.$image->getClientOriginalExtension();

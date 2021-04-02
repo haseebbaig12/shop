@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductText;
 use App\Models\ProductImage;
+use App\Models\ProductCategory;
+use App\Models\Category;
+use App\Models\CategoryText;
 
 class ProductController extends Controller
 {
@@ -17,30 +20,38 @@ class ProductController extends Controller
      */
     public function index()
     {
-//        dd(session()->get('language')[0]['id']);
-//        $compproduct  = array();
-//        $cart = session()->get('cart');
-//        dd($cart);
-        // dd($cart);
+
+        if(session()->get('lang') != null){
+            $language = session()->get('lang');
+        }else{
+            $language = 1;
+        }
+//        dd($language);
         $product= Product::where('status',1)->get();
-        $producttext= ProductText::where('language',2)->get();
+        foreach( $product as $products){
+            $producttext= ProductText::where('product_id',$products->id)->where('language',$language)->get()->first();
+            $productimg = ProductImage::where('product_id',$products->id)->get();
+            $ProductCategory = ProductCategory::where('productID',$products->id)->get()->first();
+            $categoryText = CategoryText::where('categoryID',$ProductCategory->categoryID)->where('language',$language)->get()->first();
+            $category = Category::where('id',$ProductCategory->categoryID)->get()->first();
+//       **************************   Product Array ********************************
+            $compproduct[]= [
+                'slug'=>  $products->slug,
+                'price'=>  $products->price,
+                'stock'=>  $products->stock,
+                'id' => $products->id,
+                'feature_image'=>$products->feature_image,
+                 'name' =>isset($producttext->name) ? $producttext->name : '' ,
+                'category' =>isset($categoryText) ? $categoryText : '',
+                'category_slug'=>isset($category->code) ? $category->code : '',
+                'short_desc' =>isset($producttext->short_description) ? $producttext->short_description : '' ,
+                'long_desc' => isset($producttext->long_description) ? $producttext->long_description : '' ,
+                'language' => isset($producttext->language) ? $producttext->language : '',
 
-      foreach( $product as $products){
-        $producttext= ProductText::where('product_id',$products->id)->where('language',2)->get()->first();
-//        dd($producttext);
-        $productimg = ProductImage::where('product_id',$products->id)->get()->first();
 
-        $compproduct[]= [
-          'slug'=>  $products->slug,
-          'id' => $products->id,
-          'name' =>$producttext->name,
-          'short_desc' =>$producttext->short_description,
-          'long_desc' => $producttext->long_description,
-          'language' => $producttext->language,
-        //   'image' => $productimg->image,
-        ];
-    }       return view('frontend.product.product',compact('compproduct'));
-
+            ];
+        }       
+      return view('frontend.product.product',compact('compproduct'));
 
     }
 

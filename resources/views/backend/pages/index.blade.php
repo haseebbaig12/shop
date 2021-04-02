@@ -23,7 +23,7 @@ Pages - Cooutfits
                 <th>Auther</th>
                 <th>Date</th>
                 <th>Status</th>
-                <th class="text-center">Action</th>
+                <th class="text-center">Action/Delete</th>
               </thead>
               <tbody>
 
@@ -33,7 +33,7 @@ Pages - Cooutfits
 
                     <td>
                     <a href="{{route('pages.edit',$pagesdata['id'])}}">
-                    {{$pagesdata['meta_title']}}</td>
+                    {{$pagesdata['title']}}</td>
                     </a>
                     <td> <img  height="50" width="70" src="backend/img/pagesimages/{{ $pagesdata['image'] }}" ></td>
 

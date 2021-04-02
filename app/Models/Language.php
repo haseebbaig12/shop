@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-//use Auth;
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
@@ -14,5 +14,6 @@ class Language extends Model
         'user_id',
         'site_id',
     ];
+
 
 }

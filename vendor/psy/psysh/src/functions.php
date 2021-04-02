@@ -29,22 +29,7 @@ if (!\function_exists('Psy\\sh')) {
      */
     function sh()
     {
-        if (\version_compare(\PHP_VERSION, '8.0', '<')) {
-            return '\extract(\Psy\debug(\get_defined_vars(), isset($this) ? $this : @\get_called_class()));';
-        }
-
-        return <<<'EOS'
-if (isset($this)) {
-    \extract(\Psy\debug(\get_defined_vars(), $this));
-} else {
-    try {
-        static::class;
-        \extract(\Psy\debug(\get_defined_vars(), static::class));
-    } catch (\Error $e) {
-        \extract(\Psy\debug(\get_defined_vars()));
-    }
-}
-EOS;
+        return 'extract(\Psy\debug(get_defined_vars(), isset($this) ? $this : @get_called_class()));';
     }
 }
 
@@ -190,7 +175,6 @@ if (!\function_exists('Psy\\info')) {
         $input = [
             'interactive mode'  => $config->interactiveMode(),
             'input interactive' => $config->getInputInteractive(),
-            'yolo'              => $config->yolo(),
         ];
 
         if ($config->hasReadline()) {
@@ -383,7 +367,6 @@ Options:
   -r, --raw-output      Print var_export-style return values (for non-interactive input)
   -q, --quiet           Shhhhhh.
   -v|vv|vvv, --verbose  Increase the verbosity of messages.
-      --yolo            Run PsySH without input validation. You don't want this.
 
 EOL;
                 exit($usageException === null ? 0 : 1);

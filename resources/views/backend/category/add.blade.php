@@ -36,7 +36,7 @@
       <div class="col-md-9">
             <div class="card">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">Add Product</h4>
+                <h4 class="card-title">Add Category</h4>
               </div>
               <div class="card-body">
                   <div class="row">
@@ -68,6 +68,17 @@
                                     <input type="hidden" name="language[]" value="{{$languages['id']}}" class="form-control">
                                   </div>
                             </div>
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <select name="p_id" id=""  class="form-control">
+                                          <option value="0" class="dropdown-item">Parent Category</option>
+                                          @foreach($cat as $cata)
+                                          <option value="{{$cata['id']}}" class="dropdown-item">{{$cata['name']}}</option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+                              </div>
+
                             <div class="col-md-12">
                               <div class="form-group">
                                 <label class="bmd-label-floating">Short Description</label>
@@ -78,9 +89,6 @@
                         </div>
                         @endforeach
                       </div>
-
-
-
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
@@ -101,8 +109,6 @@
                       </div>
                     </div>
                   </div>
-
-
                   <div class="clearfix"></div>
               </div>
             </div>

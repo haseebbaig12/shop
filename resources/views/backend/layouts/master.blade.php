@@ -1,8 +1,6 @@
-@include('backend/layouts/header')
+
 @include('backend/layouts/sidebar')
-<div class="content">
-    <div class="container-fluid">
-        @yield('content')
-    </div>
-</div>
+@include('backend/layouts/header')
+@yield('content')
+
 @include('backend/layouts/footer')
