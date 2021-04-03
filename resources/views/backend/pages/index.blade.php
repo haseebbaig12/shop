@@ -30,7 +30,7 @@ Pages - Cooutfits
                 @foreach($indexdata as $pagesdata)
                 <tr>
                     <td>1</td>
-
+                    <!-- {{$pagesdata['title']}} -->
                     <td>
                     <a href="{{route('pages.edit',$pagesdata['id'])}}">
                     {{$pagesdata['title']}}</td>

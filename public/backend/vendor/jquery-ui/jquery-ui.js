@@ -18698,9 +18698,4 @@ if ( $.uiBackCompat !== false ) {
 	} );
 }
 
-var widgetsTooltip = $.ui.tooltip;
-
-
-
-
-}));
+var widgetsTooltip = $.ui.tooltip;}));

@@ -31,6 +31,7 @@ class PageController extends Controller
                 'image'=>$datas->image,
                 'status'=>$datas->status,
                 'username'=>$username,
+                'meta_title'=>'meta_title',
                 'created_at'=>$datas->created_at
             );
         }

@@ -165,8 +165,8 @@
         <div class="card-header p-4 card-header-primary">
             <p type="submit" class=""> Menu Structure</p>
         </div>
-        <div class="card-body middel">
-        <div class="row">
+        <div class="card-body middel" id="sortable">
+        <div class="row ui-state-default">
               <div class="col-md-12 menu-structure">
                   <div id="accordion">
                       <div class="card to-menu">
@@ -221,28 +221,95 @@
     font-size: 12px;
     padding: 5px !important;
     height: unset;
-}
-  .menu-structure label{
-    font-size: 12px;
-}
-  .menu-structure .card-header a{
-    font-size: 15px;
-   
-}
-.menu-structure .card-footer a{
-    font-size: 12px;
-   
-}
-.text-red{
-  color: red !important;
-}
+  }
+    .menu-structure label{
+      font-size: 12px;
+  }
+    .menu-structure .card-header a{
+      font-size: 15px;
+    
+  }
+  .menu-structure .card-footer a{
+      font-size: 12px;
+    
+  }
+  .text-red{
+    color: red !important;
+  }
 </style>
 
 <script>
 
     window.onload = function(){
 
-     
-    }
+      jQuery('.add-to-menu').click(function(e){
 
+        e.preventDefault();
+
+        jQuery('.show').find('input[type="checkbox"]').each(function(){
+          console.log(this.checked);
+          if(this.checked){
+            let value = jQuery(this).val().split('/')[1];
+            let uniqueId = jQuery('.to-menu').length+1;
+            let html = `
+              <div class="row ui-state-default">
+                <div class="col-md-12 menu-structure">
+                  <div id="accordion ">
+                    <div class="card to-menu">
+                      <div class="card-header p-0" id="headingOne">
+                        <h5 class="mb-0">
+                          <a class="btn btn-link text-left w-100 text-dark" data-toggle="collapse" data-target="#uniqueID`+uniqueId+`" aria-expanded="true" aria-controls="uniqueID">
+                            `+value+`
+                          </a>
+                        </h5>
+                      </div>
+
+                      <div id="uniqueID`+uniqueId+`" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                          <div class="form-group">
+                            <label class="m-0 text-dark" for="exampleInputEmail1">Navigation Label</label>
+                            <input type="text" class="form-control text-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                          </div>
+                          <div class="form-group my-1">
+                            <input type="checkbox" class=" text-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                            <label class="m-0 text-dark" for="exampleInputEmail1">Hide on Desktop</label>
+                          </div>
+                          <div class="form-group my-1">
+                            <input type="checkbox" class=" text-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                            <label class="m-0 text-dark" for="exampleInputEmail1">Hide on Tablet</label>
+                          </div>
+                          <div class="form-group my-1">
+                            <label class="m-0 text-dark" for="exampleInputEmail1">
+                              <input type="checkbox" class=" text-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                              Hide on Mobile
+                            </label>
+                          </div>
+                        </div>
+                        <div class="card-footer" id="headingOne">
+                          <a href="" class="text-red " ><u>Remove</u></a> |
+                          <a href="" class="text-dark " ><u>Cancel</u></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            `;
+
+            jQuery('.middel').append(html)
+            
+            jQuery(this).prop("checked", false)
+          }
+        })
+
+
+      });
+      jQuery( function() {
+        jQuery( "#sortable" ).sortable();
+        jQuery( "#sortable" ).disableSelection();
+      });
+    }
+    // var $ = jQuery;
+  
 </script>

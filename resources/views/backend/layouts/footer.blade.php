@@ -39,7 +39,7 @@
   
 
 
-  {{-- <script src="{{asset('backend/vendor/jquery/dist/jquery.min.js')}}"></script> --}}
+  <!-- <script src="{{asset('backend/vendor/jquery/dist/jquery.min.js')}}"></script>  -->
  <script src="{{asset('backend/vendor/jquery-ui/jquery-ui.js')}}"></script>  
   <script src="{{asset('backend/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('backend/vendor/js-cookie/js.cookie.js')}}"></script>
@@ -50,7 +50,9 @@
   <script src="{{asset('backend/vendor/chart.js/dist/Chart.extension.js')}}"></script>
   <!-- Argon JS -->
   <script src="{{asset('backend/js/argon.js?v=1.2.0')}}"></script>
-  
+  <script>
+ 
+  </script>
 </body>
 
 </html>
