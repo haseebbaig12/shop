@@ -11,7 +11,8 @@ class SiteTableSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
-     */
+     *take care fee aman aallah bbye janu*/
+     
     public function run()
     {
         $this->creteusertype();

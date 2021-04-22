@@ -5,18 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Menu extends Model
+class menuControllers extends Model
 {
-    
-    protected $table = 'menus';
+    protected $table = 'menu_controllers';
     protected $fillable = [
         'id',
-        'sort_id',
-        'parent_id',
-        'itemID',
-        'itemTitle',
-        'itemUrl',
-        'status'
+        'Sort_Array',
     ];
     use HasFactory;
+  
 }

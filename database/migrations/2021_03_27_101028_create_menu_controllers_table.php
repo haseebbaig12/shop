@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateMenuControllersTable extends Migration
 {
-    /**
+    /*
      * Run the migrations.
      *
      * @return void
@@ -15,6 +15,7 @@ class CreateMenuControllersTable extends Migration
     {
         Schema::create('menu_controllers', function (Blueprint $table) {
             $table->id();
+            $table->text('Sort_Array');
             $table->timestamps();
         });
     }

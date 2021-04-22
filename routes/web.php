@@ -21,7 +21,7 @@ use App\Http\Controllers\Frontend\Home\HomeController as Home;
 use App\Http\Controllers\Frontend\Schedule\ScheduleController ;
 use App\Http\Controllers\Frontend\Subscription\SubscriptionController ;
 use App\Http\Controllers\Frontend\ProductController as Product;
-use App\Http\Controllers\Frontend\ProductByCategory;
+// use App\Http\Controllers\Frontend\ProductByCategory;
 use App\Http\Controllers\Frontend\SingleProductController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\CartController;
@@ -53,7 +53,8 @@ use App\Http\Controllers\Frontend\HomeController as frontend;
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
 //})->middleware(['auth'])->name('dashboard');
-
+// Route::resource('/menu', MenuController::class);
+Route::resource('/menu', MenuController::class);
 Route::middleware(['auth','site','usersite'])->group(function () {
 
 
@@ -76,7 +77,7 @@ Route::middleware(['auth','site','usersite'])->group(function () {
     Route::resource('/language', LanguageController::class);
     Route::resource('/currency', CurrencyController::class);
     Route::resource('/locale', LocaleController::class);
-    Route::resource('/menu', MenuController::class);
+    
     Route::post('/categori/{id}', [CategoryController::class,'update']);
     Route::post('demo/{id}', [CategoryController::class,'update']);
     Route::resource('/posts', PostsController::class);
@@ -92,7 +93,7 @@ require __DIR__.'/auth.php';
 Route::get('/page/{slug}', [PageController::class,'pagedetails']);
 
 Route::resource('/shop', Product::class);
-Route::resource('/collection', ProductByCategory::class);
+// Route::resource('/collection', ProductByCategory::class);
 Route::resource('/single-product', SingleProductController::class);
 Route::resource('/languages', LanguageSwitcher::class);
 Route::get('/', [Home::class,'index'])->name('Home');

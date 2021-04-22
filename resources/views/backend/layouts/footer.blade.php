@@ -41,6 +41,7 @@
 
   <!-- <script src="{{asset('backend/vendor/jquery/dist/jquery.min.js')}}"></script>  -->
  <script src="{{asset('backend/vendor/jquery-ui/jquery.nestable.js')}}"></script>  
+ <!-- <script src="{{asset('backend/vendor/jquery-ui/jquery-ui.js')}}"></script>   -->
   <script src="{{asset('backend/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('backend/vendor/js-cookie/js.cookie.js')}}"></script>
   <script src="{{asset('backend/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
